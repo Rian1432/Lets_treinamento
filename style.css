@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*{
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+header{
+    padding: 20px;
+    background-color: rgb(92, 43, 226);
+    color: azure;
+}
+header > img{
+    display: inline;
+    width: 5%;
+}
+.menu{
+    display: inline;
+    text-align: end;
+    float: right;
+}
+a{
+    text-decoration: none;
+    padding: 5px;
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.menu .login_btn{
+    padding: 6px 25px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+.login_btn:hover{
+    color: #5c2be2;
+    background-color: white;
+    transition-duration: 0.5s;
+}
+div h1 p{
+    display: inline;
+}
+div.header_container{
+    max-width: 800px;
+    margin: 60px auto 0px auto;
+    display: flex;
+    align-content: flex-start;
+}
+div.header_container > div{
+    width: 46%;
+    margin-right: 4%;
+}
+div.header_container p{
+    margin: 20px 0px 30px 0px;
+}
+div.header_container img{
+    width: 46%;
+    margin-right: 4%;
+    transform: rotate(3deg);
+    box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.432);
+    border-radius: 10px;
+}
+a.container_btn{
+    padding: 12px 45px;
+    border: 1px solid azure;
+    border-radius: 25px;
+}
+a.container_btn:hover{
+    background-color: azure;
+    color: rgb(92, 43, 226);
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+}
+svg{
+    margin: -25px;
+}
+/*******************final do topo da página****************/
+
+section{
+    margin: 80px 0px;
+}
+
+section div{
+    margin: auto;
+    max-width: 850px;
+}
+section .description{
+    text-align: center;
+    color: #5c2be2;
+}
+section h2{
+    max-width: 400px;
+    text-align: center;
+    margin: 5px auto 20px auto;
+    color: #222222;
+}
+section div.marketing_ctn{
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    margin-top: 0px;
+}
+div.marketing_ctn p{
+    color: #494949;
+}
+div.marketing_ctn img{
+    width: 55%;
+}
+.container_gray{
+    background-color: rgb(235, 235, 235);
+    padding: 80px 0px;
+}
+.container_gray > div> p{
+    margin-bottom: 40px;
+    color: #494949;
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+}
+.container_gray nav{
+    margin: 40px 0px 30px 0px;
+    display: block;
+    text-align: center;
+}
+.container_gray nav a{
+    color: #5c2be2;    
+}
+.flex{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.flex ul{
+    padding: 0px;
+    list-style-position: inside;
+    list-style: #5c2be2;
+    list-style-type: square;
+}
+.flex ul > li{
+    margin-bottom: 10px;
+    color: #494949;
+}
+.flex p{
+    margin: 20px 0px ;
+    color: #494949;
+}
+.features_img{
+    width: 46%;
+}
+.flex span{
+    max-width: 420px;
+}
+.flex .login_btn{
+    padding: 12px 45px;
+    background-color: #5c2be2;
+    border-radius: 25px;
+    margin: 10px 0px;
+    position: relative;
+    top: 20px;
+}
+.flex .login_btn:hover{
+    background-color: azure;
+    color: #5c2be2;
+    border: 1px solid #5c2be2;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+}
+/***********configurações de dentro do main*************/
+
