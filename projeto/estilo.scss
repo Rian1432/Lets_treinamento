@@ -18,13 +18,16 @@
     }
 }
 
-$primary_color: #5c2be2;
+$primary_color: #5f4dee;
 $secudary_color: #f0ffff;
 $terciary_color: #494949;
 
 *{
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
+}
+body{
+    border-top: 15px solid $primary_color;
 }
 
 a{
@@ -40,47 +43,52 @@ hr{
 /******/////////////final de estilos globais\\\\\\\\\\\\******/
 
 header{
-    position: fixed;
+    @include flex(row);
+    justify-content: space-between;
+    position: sticky;
     z-index: 999;
     top: 0;
     width: 100vw;
     box-sizing: border-box;
-    padding: 20px 40px 10px 40px;
+    padding: 15px 40px 10px 40px;
     background-color: $primary_color;
     color: $secudary_color;
-}
-header > img{
-    display: inline;
-    width: 75px;
+    
+    img{
+        display: inline;
+        width: 75px;
+    }
 }
 .content_top{
     background-color: $primary_color;
     padding-top: 40px;
     color: $secudary_color;
-
-    img{
-        margin: 0px 5%;
-    }
+    overflow: hidden;
 }
 svg.header-decoration{
-    margin-bottom: -5px;
+    margin: -10px;
 }
 .carusel{
+    @include flex(row);
     position: relative;
-    display: block;
-    background-color: white;
-    transform: translate3d(-1252.8px, 0px, 0px); 
-    transition-duration: 0ms;
     padding: 20px 0px;
+    margin-bottom: 60px;
+    overflow-x: scroll;
 
     img{
-        margin-right: 10px;
+        margin: 0px 2.5%;
     }
+}
+.carusel::-webkit-scrollbar {
+    width: 0px;
+    border-radius: 5px;
 }
 .menu{
     display: none;
     text-align: end;
     float: right;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 /********não soube colocar o menu "burguer"*******/
 
@@ -139,7 +147,7 @@ div h1 p{
     display: inline;
 }
 div.header_container{
-    margin: 60px auto 20px auto;
+    margin: 60px 15px 0px 25px;
     @include flex(column);
 
     img{
@@ -155,33 +163,43 @@ div.header_container > div{
     margin: 0px 5% 40px 5%;
     text-align: center;
 }
-a.container_btn{
-    @include button(12px 45px, $primary_color, $secudary_color);
-    background-color: $secudary_color;
-    color: $primary_color;
-    box-sizing: border-box;
-    margin-bottom: 20px;
+.btns{
+    @include flex(row);
+    align-items: flex-start;
+    justify-content: center;
+
+    a.container_btn{
+        @include button(12px 45px, $primary_color, $secudary_color);
+        background-color: $secudary_color;
+        color: $primary_color;
+        margin-right: 7px;
+        }
+    a.container_btn2{
+        @include button(12px 45px, $secudary_color, $primary_color);
+        margin-left: 7px;
+    }
 }
-a.container_btn2{
-    @include button(12px 45px, $secudary_color, $primary_color)
-    
-}
-@media screen and (min-width:930px){
+@media (min-width:930px){
+    body{
+        overflow-x: hidden;
+        padding: 0px;
+    }
     div.header_container{
         max-width: 1250px;
         margin: 0px auto;
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
 
         img{
-            width: 46%;
-            margin-right: 4%;
+            position: relative;
+            left: 75px;
+            width: 55%;
             transform: rotate(3deg);
         }
     }
     div.header_container > div{
-        max-width: 89%;
-        margin-right: 4%;
+        max-width: 40%;
+        margin-right: 1%;
         text-align: justify;
     }
     .menu{
@@ -194,17 +212,42 @@ a.container_btn2{
             margin: 0px;
         }
     }
+    .btns{
+        justify-content: flex-start;
+    }
+    h1{
+        font-size: 3.5em;
+        text-align: left;
+    }
+    h2{
+        font-size: 2em;
+    }
 }
-@media screen and (max-width:480px){
+@media (max-width:480px){
     header{
-        margin: 0px;
-        padding: 15px 4px 35px 4px;
+        padding: 15px 10px;
     }
     div.header_container > div{
-        margin: 0px 1% 40px 1%;
+        margin: 0px 10px% 40px 1%;
     }
     .content_top{
         padding-top: 60px;
+    }
+    .btns{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        a.container_btn{
+            margin-right: 0px;
+            margin-bottom: 10px;
+        }
+        a.container_btn2{
+            margin-left: 0px;
+        }
+    }
+    .carusel{
+        margin: 0px 60px 60px 60px;
     }
 }
 
@@ -269,10 +312,30 @@ section{
 .links{
     margin-bottom: 0px;
 
-    a:hover{
-        color: $primary_color;
-        border-bottom: 2px solid $primary_color;
-    }
+    span{
+        @include flex(row);
+        border-bottom: 2px solid #b8b8b8;
+        padding-bottom: 5px;
+        color: #6b747b;
+        cursor: pointer;
+        display: inline;
+        font-size: 1.3em;
+
+        &:hover{
+            color: $primary_color;
+            border-color: $primary_color;
+        }
+
+        p{
+            display: inline;
+            margin-right: 12px;
+            font-weight: 600;
+        }
+        i{
+            position: relative;
+            top: 6px;
+        }
+    }   
 }
 .flex{
     @include flex(column);
@@ -292,12 +355,16 @@ section{
             margin: 0px;
         }
     }
+    h3{
+        font-size: 1.8em;
+        color: #222222;
+    }
     p{
         margin: 20px 0px ;
         color: $terciary_color;
     }
     span{
-        max-width: 420px;
+        max-width: 500px;
     }
     .login_btn{
         padding: 12px 45px;
@@ -325,7 +392,7 @@ section{
 }
 .flex > .price{
     border: 2px solid #5c2be23d;
-    padding: 35px 5px 50px 5px;
+    padding: 60px 30px;
     max-width: 250px;
     border-radius: 6px;
     text-align: center;
@@ -333,6 +400,7 @@ section{
 }
 .price h3{
     color: $primary_color;
+    font-size: 1.2em;
 }
 .price ul{
     text-align: justify;
@@ -352,13 +420,29 @@ section{
     margin: 40px auto;
     @include flex(column);
     text-align: center;
-    max-width: 80%;
+    max-width: 100%;
+    overflow: auto;
+    cursor: grab;
 
+    div{
+        @include flex(row);
+        width: 1000px;
+        margin: 0px 100px;
+
+        span{
+            display: block;
+            width: 700px;
+        }
+    }
     img{
         width: 100px;
         border-radius: 50%;
-        margin-right: 20px;
+        margin-right: 30px;
     }
+}
+.personal::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 5px;
 }
 .email_box{
     background-color: #ebebeb62;
@@ -371,10 +455,10 @@ section{
         text-align: center;
     }
 
-    h3{
+    h2{
         text-align: center;
         max-width: 450px;
-        margin: 0px auto 20px auto;
+        margin: 0px auto 40px auto;
         font-size: 1.5em;
     }
     input{
@@ -415,7 +499,7 @@ form .login_btn{
         transition-duration: 0.5s;
     }
 }
-@media screen and (min-width:930px){
+@media (min-width:930px){
     section div.marketing_ctn{
         flex-direction: row;
         align-items: flex-start;
@@ -465,11 +549,24 @@ form .login_btn{
     .personal{
         margin: 80px auto;
         @include flex(row);
+        text-align: left;
+
+        blockquote{
+            color: #6b747b;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        cite{
+            font-weight: 600;
+            font-style: normal;
+        }
     
         img{
-            width: 15%;
-            margin-right: 20px;
+            width: 150px;
         }
+    }
+    section h2{
+        max-width: 600px;
     }
 }
 #content-icons{
@@ -498,7 +595,7 @@ form .login_btn{
         }
     }
 }
-@media screen and (max-width:480px){
+@media (max-width:480px){
     .flex{
         padding: 0px 10px;
     }
@@ -508,6 +605,9 @@ form .login_btn{
     .email_box{
         padding: 20px;
 
+    }
+    .personal img{
+        margin: 0px;
     }
 }
 
@@ -544,10 +644,11 @@ footer div{
     background-color: $primary_color;
 }
 .footer-frame{
+    fill: $primary_color;
     position: relative;
     top: 5px;
 }
-@media screen and (min-width:930px){
+@media (min-width:930px){
     footer > div{
         padding: 30px 120px;
         flex-direction: row;

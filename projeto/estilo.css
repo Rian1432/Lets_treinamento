@@ -5,6 +5,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  border-top: 15px solid #5f4dee;
+}
+
 a {
   text-decoration: none;
   padding: 5px;
@@ -18,55 +22,79 @@ hr {
 
 /******/
 header {
-  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
   z-index: 999;
   top: 0;
   width: 100vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 20px 40px 10px 40px;
-  background-color: #5c2be2;
+  padding: 15px 40px 10px 40px;
+  background-color: #5f4dee;
   color: #f0ffff;
 }
 
-header > img {
+header img {
   display: inline;
   width: 75px;
 }
 
 .content_top {
-  background-color: #5c2be2;
+  background-color: #5f4dee;
   padding-top: 40px;
   color: #f0ffff;
-}
-
-.content_top img {
-  margin: 0px 5%;
+  overflow: hidden;
 }
 
 svg.header-decoration {
-  margin-bottom: -5px;
+  margin: -10px;
 }
 
 .carusel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
-  display: block;
-  background-color: white;
-  -webkit-transform: translate3d(-1252.8px, 0px, 0px);
-          transform: translate3d(-1252.8px, 0px, 0px);
-  -webkit-transition-duration: 0ms;
-          transition-duration: 0ms;
   padding: 20px 0px;
+  margin-bottom: 60px;
+  overflow-x: scroll;
 }
 
 .carusel img {
-  margin-right: 10px;
+  margin: 0px 2.5%;
+}
+
+.carusel::-webkit-scrollbar {
+  width: 0px;
+  border-radius: 5px;
 }
 
 .menu {
   display: none;
   text-align: end;
   float: right;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /********não soube colocar o menu "burguer"*******/
@@ -99,7 +127,7 @@ svg.header-decoration {
 .dropbox_content {
   display: none;
   position: absolute;
-  background-color: #5c2be2;
+  background-color: #5f4dee;
   border-radius: 0px 0px 4px 4px;
   font-size: 14px;
   font-weight: 600;
@@ -130,7 +158,7 @@ svg.header-decoration {
 
 .menu .login_btn:hover {
   background-color: #f0ffff;
-  color: #5c2be2;
+  color: #5f4dee;
   -webkit-transition-property: background-color, color;
   transition-property: background-color, color;
   -webkit-transition-duration: 0.5s;
@@ -142,7 +170,7 @@ div h1 p {
 }
 
 div.header_container {
-  margin: 60px auto 20px auto;
+  margin: 60px 15px 0px 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,19 +199,36 @@ div.header_container > div {
   text-align: center;
 }
 
-a.container_btn {
+.btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btns a.container_btn {
   padding: 12px 45px;
   border: 1px solid #f0ffff;
   border-radius: 25px;
   background-color: #f0ffff;
-  color: #5c2be2;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-bottom: 20px;
+  color: #5f4dee;
+  margin-right: 7px;
 }
 
-a.container_btn:hover {
-  background-color: #5c2be2;
+.btns a.container_btn:hover {
+  background-color: #5f4dee;
   color: #f0ffff;
   -webkit-transition-property: background-color, color;
   transition-property: background-color, color;
@@ -191,22 +236,27 @@ a.container_btn:hover {
           transition-duration: 0.5s;
 }
 
-a.container_btn2 {
+.btns a.container_btn2 {
   padding: 12px 45px;
   border: 1px solid #f0ffff;
   border-radius: 25px;
+  margin-left: 7px;
 }
 
-a.container_btn2:hover {
+.btns a.container_btn2:hover {
   background-color: #f0ffff;
-  color: #5c2be2;
+  color: #5f4dee;
   -webkit-transition-property: background-color, color;
   transition-property: background-color, color;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
 
-@media screen and (min-width: 930px) {
+@media (min-width: 930px) {
+  body {
+    overflow-x: hidden;
+    padding: 0px;
+  }
   div.header_container {
     max-width: 1250px;
     margin: 0px auto;
@@ -214,19 +264,20 @@ a.container_btn2:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   div.header_container img {
-    width: 46%;
-    margin-right: 4%;
+    position: relative;
+    left: 75px;
+    width: 55%;
     -webkit-transform: rotate(3deg);
             transform: rotate(3deg);
   }
   div.header_container > div {
-    max-width: 89%;
-    margin-right: 4%;
+    max-width: 40%;
+    margin-right: 1%;
     text-align: justify;
   }
   .menu {
@@ -238,18 +289,49 @@ a.container_btn2:hover {
   .content_top img {
     margin: 0px;
   }
+  .btns {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  h1 {
+    font-size: 3.5em;
+    text-align: left;
+  }
+  h2 {
+    font-size: 2em;
+  }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   header {
-    margin: 0px;
-    padding: 15px 4px 35px 4px;
+    padding: 15px 10px;
   }
   div.header_container > div {
-    margin: 0px 1% 40px 1%;
+    margin: 0px 10px 1%;
   }
   .content_top {
     padding-top: 60px;
+  }
+  .btns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px;
+  }
+  .btns a.container_btn {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  .btns a.container_btn2 {
+    margin-left: 0px;
+  }
+  .carusel {
+    margin: 0px 60px 60px 60px;
   }
 }
 
@@ -265,7 +347,7 @@ section div {
 
 section .description {
   text-align: center;
-  color: #5c2be2;
+  color: #5f4dee;
 }
 
 section h2 {
@@ -331,9 +413,39 @@ section div.marketing_ctn p {
   margin-bottom: 0px;
 }
 
-.links a:hover {
-  color: #5c2be2;
-  border-bottom: 2px solid #5c2be2;
+.links span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid #b8b8b8;
+  padding-bottom: 5px;
+  color: #6b747b;
+  cursor: pointer;
+  display: inline;
+  font-size: 1.3em;
+}
+
+.links span:hover {
+  color: #5f4dee;
+  border-color: #5f4dee;
+}
+
+.links span p {
+  display: inline;
+  margin-right: 12px;
+  font-weight: 600;
+}
+
+.links span i {
+  position: relative;
+  top: 6px;
 }
 
 .flex {
@@ -364,8 +476,13 @@ section div.marketing_ctn p {
 }
 
 .flex ul li::marker {
-  color: #5c2be2;
+  color: #5f4dee;
   margin: 0px;
+}
+
+.flex h3 {
+  font-size: 1.8em;
+  color: #222222;
 }
 
 .flex p {
@@ -374,12 +491,12 @@ section div.marketing_ctn p {
 }
 
 .flex span {
-  max-width: 420px;
+  max-width: 500px;
 }
 
 .flex .login_btn {
   padding: 12px 45px;
-  background-color: #5c2be2;
+  background-color: #5f4dee;
   border-radius: 25px;
   margin: 10px 0px;
   position: relative;
@@ -388,8 +505,8 @@ section div.marketing_ctn p {
 
 .flex .login_btn:hover {
   background-color: #f0ffff;
-  color: #5c2be2;
-  border: 1px solid #5c2be2;
+  color: #5f4dee;
+  border: 1px solid #5f4dee;
   -webkit-transition-property: background-color, color;
   transition-property: background-color, color;
   -webkit-transition-duration: 0.5s;
@@ -407,7 +524,7 @@ section div.marketing_ctn p {
 
 .flex > .price {
   border: 2px solid #5c2be23d;
-  padding: 35px 5px 50px 5px;
+  padding: 60px 30px;
   max-width: 250px;
   border-radius: 6px;
   text-align: center;
@@ -415,7 +532,8 @@ section div.marketing_ctn p {
 }
 
 .price h3 {
-  color: #5c2be2;
+  color: #5f4dee;
+  font-size: 1.2em;
 }
 
 .price ul {
@@ -448,13 +566,41 @@ section div.marketing_ctn p {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  max-width: 80%;
+  max-width: 100%;
+  overflow: auto;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.personal div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1000px;
+  margin: 0px 100px;
+}
+
+.personal div span {
+  display: block;
+  width: 700px;
 }
 
 .personal img {
   width: 100px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 30px;
+}
+
+.personal::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
 }
 
 .email_box {
@@ -478,10 +624,10 @@ section div.marketing_ctn p {
   text-align: center;
 }
 
-.email_box h3 {
+.email_box h2 {
   text-align: center;
   max-width: 450px;
-  margin: 0px auto 20px auto;
+  margin: 0px auto 40px auto;
   font-size: 1.5em;
 }
 
@@ -518,7 +664,7 @@ input.txt {
 
 form .login_btn {
   position: relative;
-  background-color: #5c2be2;
+  background-color: #5f4dee;
   width: 100%;
   height: 3rem;
   border: 1px solid white;
@@ -528,16 +674,16 @@ form .login_btn {
 }
 
 form .login_btn:hover {
-  border-color: #5c2be2;
+  border-color: #5f4dee;
   background-color: #f0ffff;
-  color: #5c2be2;
+  color: #5f4dee;
   -webkit-transition-property: background-color, color;
   transition-property: background-color, color;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
 
-@media screen and (min-width: 930px) {
+@media (min-width: 930px) {
   section div.marketing_ctn {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -603,10 +749,22 @@ form .login_btn:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    text-align: left;
+  }
+  .personal blockquote {
+    color: #6b747b;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .personal cite {
+    font-weight: 600;
+    font-style: normal;
   }
   .personal img {
-    width: 15%;
-    margin-right: 20px;
+    width: 150px;
+  }
+  section h2 {
+    max-width: 600px;
   }
 }
 
@@ -624,20 +782,20 @@ form .login_btn:hover {
   width: 23px;
   border-radius: 50%;
   padding: 12px;
-  background-color: #5c2be2;
+  background-color: #5f4dee;
   color: white;
   font-size: 2em;
   margin: 0px 5px;
 }
 
 #content-icons .fab:hover {
-  color: #5c2be2;
+  color: #5f4dee;
   background-color: #ebebeb62;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .flex {
     padding: 0px 10px;
   }
@@ -647,13 +805,16 @@ form .login_btn:hover {
   .email_box {
     padding: 20px;
   }
+  .personal img {
+    margin: 0px;
+  }
 }
 
 /******/
 footer {
   color: #ebebeb;
   padding: 0px;
-  background-color: #5c2be2;
+  background-color: #5f4dee;
   font-size: 14px;
 }
 
@@ -694,15 +855,16 @@ footer div {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background-color: #5c2be2;
+  background-color: #5f4dee;
 }
 
 .footer-frame {
+  fill: #5f4dee;
   position: relative;
   top: 5px;
 }
 
-@media screen and (min-width: 930px) {
+@media (min-width: 930px) {
   footer > div {
     padding: 30px 120px;
     -webkit-box-orient: horizontal;
@@ -715,7 +877,7 @@ footer div {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background-color: #5c2be2;
+    background-color: #5f4dee;
   }
   footer span p {
     margin-bottom: 0px;

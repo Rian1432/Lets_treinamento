@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
 </head>
 <body id="home">
-    <header > 
+    <header> 
         <img src="https://inovatik.com/tivo/images/logo.svg" alt="logo">
         <nav class="menu">
             <a href="#home">Home</a>
@@ -39,11 +38,13 @@
     </header>
     <div class="content_top">     
         <div class="header_container">
-            <div>
+            <div class="header_content">
                 <h1>Modelo de HTML da Web de aplicativo SaaS</h1>
                 <p>Use o Tivo para automatizar suas ações de marketing a fim de atingir um público muito maior em sua área de trabalho</p>
-                <a class="container_btn" href="#">Descobrir</a>
-                <a class="container_btn2" href="#">Inscrever-se</a>
+                <div class="btns">
+                    <a class="container_btn" href="#">Descobrir</a>
+                    <a class="container_btn2" href="#">Inscrever-se</a>
+                </div>
             </div>
             <img src="https://inovatik.com/tivo/images/header.svg" alt="site_image">
         </div>
@@ -56,14 +57,14 @@
 
     <main>
         <section>
-            <span class="carusel">
-                <img src="https://inovatik.com/tivo/images/customer-logo-2.png" alt="logo">
+            <div class="carusel">
                 <img src="https://inovatik.com/tivo/images/customer-logo-1.png" alt="logo">
+                <img src="https://inovatik.com/tivo/images/customer-logo-2.png" alt="logo">
                 <img src="https://inovatik.com/tivo/images/customer-logo-3.png" alt="logo">
                 <img src="https://inovatik.com/tivo/images/customer-logo-4.png" alt="logo">
                 <img src="https://inovatik.com/tivo/images/customer-logo-5.png" alt="logo">
                 <img src="https://inovatik.com/tivo/images/customer-logo-6.png" alt="logo">
-            </span>
+            </div>
             <div>
                 <p class="description">Descrição</p>
                 <h2>A automação de marketing trará muito mais leads qualificados</h2>
@@ -95,10 +96,19 @@
             <div>    
                 <h2>Automação de Marketing</h2>
                 <p>Leve sua estratégia de negócios para o próximo nível e automatize suas tarefas de marketing para economizar tempo no desenvolvimento de produtos. Tivo pode fornecer resultados em menos de 2 semanas</p>
-                <nav class="links"><!---aqui não são links de vdd, coloquei errado-->
-                    <a href="#">List builder</a>
-                    <a href="#">Campaings</a>
-                    <a href="#">Analytics</a>
+                <nav class="links">
+                    <span>
+                        <i class="material-icons">toc</i>
+                        <p>List builder</p>
+                    </span>
+                    <span>
+                        <i class="material-icons">mail_outline</i>
+                        <p href="#">Campaings</p>
+                    </span>
+                    <span>
+                        <i class="material-icons">trending_up</i>
+                        <p href="#">Analytics</p>
+                    </span>
                 </nav>
                 <div class="flex">
                     <img class="features_img" src="https://inovatik.com/tivo/images/feature-app-1.svg" alt="List_building_image">
@@ -148,7 +158,7 @@
             <div class="flex">
                 <span class="price">
                     <h3>INICIANTE</h3>
-                    <p class="valor">SEM CUSTOS</p>
+                    <p class="valor">Grátis</p>
                     <p>Por 14 dias</p>
                     <hr>
                     <ul>
@@ -188,14 +198,44 @@
                 
             </div>
             <div>
-            <aside class="personal">
-                <img src="https://inovatik.com/tivo/images/testimonial-4.jpg" alt="person_image">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.</p>
+            <aside class="personal" id="personal">
+                <div>
+                    <img src="https://inovatik.com/tivo/images/testimonial-1.jpg" alt="person_image">
+                    <span>
+                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
+                        </blockquote>
+                        <cite>Jude Thorn - Online Marketer</cite>
+                    </span>
+                </div>
+                <div>
+                    <img src="https://inovatik.com/tivo/images/testimonial-2.jpg" alt="person_image">
+                    <span>
+                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
+                        </blockquote>
+                        <cite>Roy Smith - Developer</cite>
+                    </span>
+                </div>
+                <div>
+                    <img src="https://inovatik.com/tivo/images/testimonial-3.jpg" alt="person_image">
+                    <span>
+                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
+                        </blockquote>
+                        <cite>Marsha Singer - Online Marketer</cite>
+                    </span>
+                </div>
+                <div>
+                    <img src="https://inovatik.com/tivo/images/testimonial-4.jpg" alt="person_image">
+                    <span>
+                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
+                        </blockquote>
+                        <cite>Rondan Louis - Online Marketer</cite>
+                    </span>
+                </div>
             </aside>
             <form class="email_box">
                 <div>
                     <p class="description">BOLETIM DE NOTÍCIAS</p>
-                    <h3>Fique atualizado com as últimas notícias para obter mais pistas</h3>
+                    <h2>Fique atualizado com as últimas notícias para obter mais pistas</h2>
                     <div>
                         <input class="txt" type="email" size="" placeholder="Digite seu e-mail">
                         <label for="terms"><input class="check" type="checkbox" name="terms" id="">Eu aceito os termos de serviço.</label>
@@ -213,7 +253,7 @@
             </div>
         </section>
     </main>
-    <svg class="footer-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 115.984"><defs><style>.cls-2{fill:#5c2be2;}</style></defs><title>footer-frame</title><path class="cls-2" d="M1616.28,381.705c-87.656,5.552-93.356-59.62-197.369-67.562-112.391-8.581-137.609,65.077-251.189,60.632-109.57-4.288-116.156-74.017-225.25-83.153-125.171-10.483-150,78.5-293,88.35-136.948,9.437-173.108-68.092-320.83-77.956C255.5,297.133,143,308.1,0,395.564V406.75H1920V324.537c-18-6.507-43.63-14.492-76.1-15.591C1740.655,305.452,1705.829,376.033,1616.28,381.705Z" transform="translate(0 -290.766)"></path></svg><!-----também foi copiado---->
+    <svg class="footer-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 115.984"><title>footer-frame</title><path class="cls-2" d="M1616.28,381.705c-87.656,5.552-93.356-59.62-197.369-67.562-112.391-8.581-137.609,65.077-251.189,60.632-109.57-4.288-116.156-74.017-225.25-83.153-125.171-10.483-150,78.5-293,88.35-136.948,9.437-173.108-68.092-320.83-77.956C255.5,297.133,143,308.1,0,395.564V406.75H1920V324.537c-18-6.507-43.63-14.492-76.1-15.591C1740.655,305.452,1705.829,376.033,1616.28,381.705Z" transform="translate(0 -290.766)"></path></svg><!-----também foi copiado---->
     
 <!-----------final da última----------->
     
@@ -245,5 +285,7 @@
             </span>
         </div>
     </footer>
+
+    <script src="scroll.js"></script>
 </body>
 </html>
