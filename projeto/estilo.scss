@@ -18,6 +18,28 @@
     }
 }
 
+/*keyframe da animação do carrosel*/
+@keyframes scroll{
+    0%{ right: 0px;}
+
+    15%{ right: 0px;}/*porcentagem anterior ao estouro para aumentar a velocidade do movimento*/
+    16%{ right: 175px;}
+    
+    31%{ right: 175px;}
+    32%{ right: 355px;}
+    
+    49%{ right: 355px;}
+    50%{ right: 535px;}
+    
+    65%{ right: 535px;}
+    66%{ right: 715px;}
+    
+    83%{ right: 715px;}
+    84%{ right: 895px;}
+    
+    99%{ right: 895px;}
+    100% { right: 1055px;}/*soma de todas as imagens mais o margin*/
+}
 $primary_color: #5f4dee;
 $secudary_color: #f0ffff;
 $terciary_color: #494949;
@@ -26,10 +48,6 @@ $terciary_color: #494949;
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
 }
-body{
-    border-top: 15px solid $primary_color;
-}
-
 a{
     text-decoration: none;
     padding: 5px;
@@ -43,20 +61,24 @@ hr{
 /******/////////////final de estilos globais\\\\\\\\\\\\******/
 
 header{
-    @include flex(row);
-    justify-content: space-between;
     position: sticky;
     z-index: 999;
     top: 0;
     width: 100vw;
     box-sizing: border-box;
-    padding: 15px 40px 10px 40px;
+    padding: 8px 40px;
     background-color: $primary_color;
     color: $secudary_color;
     
     img{
         display: inline;
         width: 75px;
+        z-index: 999;
+    }
+    .navbar{
+        @include flex(row);
+        width: 100%;
+        justify-content: space-between;
     }
 }
 .content_top{
@@ -68,23 +90,52 @@ header{
 svg.header-decoration{
     margin: -10px;
 }
-.carusel{
+.container_carousel{
+    position: relative;
+    max-width: 1050px;
+    overflow-y: auto;
+    overflow-x: scroll;
+    margin-bottom: 60px;
+}
+.carousel {
     @include flex(row);
     position: relative;
+    top: 0;
+    cursor: grab;
+    margin: 0px;
     padding: 20px 0px;
-    margin-bottom: 60px;
-    overflow-x: scroll;
+    animation-name: scroll; 
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    
 
-    img{
-        margin: 0px 2.5%;
+    &:active {
+        cursor: grabbing;
+        transition: 0.5s ease;
+        transform: scale(1.05);
     }
-}
-.carusel::-webkit-scrollbar {
+    img {
+        display: block;
+        margin-right: 25px;
+    }
+  }
+.carousel::-webkit-scrollbar {
     width: 0px;
     border-radius: 5px;
 }
-.menu{
+.container_carousel::-webkit-scrollbar{
+    height: 0px;
+}
+.burguer{
     display: none;
+} 
+#check{
+    display: none;
+}
+.menu{
     text-align: end;
     float: right;
     font-size: 0.9rem;
@@ -100,11 +151,7 @@ svg.header-decoration{
         display: block;
         z-index: 999;
     }
-
-    span{
-        cursor: pointer;
-    }
-    span::after{
+    >a::after{
         content: '';
 
         position: absolute;
@@ -181,6 +228,7 @@ div.header_container > div{
 }
 @media (min-width:930px){
     body{
+        border-top: 15px solid $primary_color;
         overflow-x: hidden;
         padding: 0px;
     }
@@ -221,6 +269,58 @@ div.header_container > div{
     }
     h2{
         font-size: 2em;
+    }
+}
+@media (max-width:930px){
+    
+    .menu{
+        @include flex(column);
+        align-items: flex-start;
+        background-color: $primary_color;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        right: -100%;/*********************mudar aqui*******************/
+        top: 0;
+        padding-top: 65px; 
+        a{
+            margin: 0px 0px 5px 15px;
+        }
+    }
+    .burguer{
+        display: block;
+        cursor: pointer;
+        z-index: 999;
+
+        img{
+            width: 30px;
+        }
+    }
+   
+    #check:checked ~ .menu{
+        right: 0;
+        transition-duration: 0.8s;
+    }
+    .dropbox{
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .dropbox_content{
+        margin-top: 10px;
+        position: relative;
+        z-index: 0;
+        
+        ul{
+            display: block;
+            width: 95vw;
+            list-style-type: none;
+            text-align: left;
+            padding: 10px 15px;
+            box-shadow: none;
+        }
+    }
+    .dropbox a::after{
+        top: 28.3%;
     }
 }
 @media (max-width:480px){

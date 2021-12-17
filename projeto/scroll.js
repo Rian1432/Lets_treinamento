@@ -1,42 +1,31 @@
-const ele =document.getElementById('personal'); 
-ele.scrollTop=100;  
-ele.scrollLeft=150;  
+// slider tá selecionando nosso elemento pela classe, no caso a div que contém o scroll
+const slider = document.querySelector(".container_carousel");
 
-let pos = { top: 0, left: 0, x: 0, y: 0 };
+let isDown = false;
+let startX;
+let scrollLeft;
 
-const mouseDownHandler = function (e) {
-    pos = {
-        // The current scroll
-        left: ele.scrollLeft,
-        top: ele.scrollTop,
-        // Obtenha a posição atual do mouse
-        x: e.clientX,
-        y: e.clientY,
-    };
+// --------------EVENTOS DE MOUSE---------------------------------
 
-    document.addEventListener('mousemove', mouseMoveHandler);
-    document.addEventListener('mouseup', mouseUpHandler);
-};
-
-const mouseMoveHandler = function (e) {
-    // A que distância o mouse foi movido
-    const dx = e.clientX - pos.x;
-    const dy = e.clientY - pos.y;
-
-    // Role o elemento
-    ele.scrollTop = pos.top - dy;
-    ele.scrollLeft = pos.left - dx;
-};
-const mouseDownHandler = function(e) {
-    // Muda o cursor e evita que o usuário selecione o texto
-    ele.style.cursor = 'grabbing';
-    ele.style.userSelect = 'none';
-};
-
-const mouseUpHandler = function () {
-    document.removeEventListener('mousemove', mouseMoveHandler);
-    document.removeEventListener('mouseup', mouseUpHandler);
-
-    ele.style.cursor = 'grab';
-    ele.style.removeProperty('user-select');
-};
+// Mousedown é quando o usuário clica sob o elemento
+slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  
+  //Mouseup é quando o usuário para de clicar sob o elemento.
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  
+  // Mousemove o nome já fala tudo, é quando o mouse é movido.
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3; //velocidade do scroll
+      slider.scrollLeft = scrollLeft - walk;
+  });

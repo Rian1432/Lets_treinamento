@@ -11,30 +11,34 @@
 </head>
 <body id="home">
     <header> 
-        <img src="https://inovatik.com/tivo/images/logo.svg" alt="logo">
-        <nav class="menu">
-            <a href="#home">Home</a>
-            <a href="#features">Recursos</a>
-            <a href="#details">Detalhes</a>
-            <a href="#pricing">Preços</a>
-            <div class="dropbox">
-                <span>Drop</span>
-                <div class="dropbox_content">
-                    <ul>
-                        <li><a href="#">Inscrever-se</a></li>
-                        <hr>
-                        <li><a href="#">Conecte-se</a></li>
-                        <hr>
-                        <li><a href="#">Detalhes do artigo</a></li>
-                        <hr>
-                        <li><a href="#">Termos e condições</a></li>
-                        <hr>
-                        <li><a href="#">Política de privacidade</a></li>
-                    </ul>
+        <div class="navbar">
+            <img src="https://inovatik.com/tivo/images/logo.svg" alt="logo">
+            <input type="checkbox" id="check" >
+            <label for="check" class="burguer"><img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e" alt=""></label>
+            <nav class="menu active">
+                <a href="#home">Home</a>
+                <a href="#features">Recursos</a>
+                <a href="#details">Detalhes</a>
+                <a href="#pricing">Preços</a>
+                <div class="dropbox">
+                    <a>Drop</a>
+                    <div class="dropbox_content">
+                        <ul>
+                            <li><a href="#">Inscrever-se</a></li>
+                            <hr>
+                            <li><a href="#">Conecte-se</a></li>
+                            <hr>
+                            <li><a href="#">Detalhes do artigo</a></li>
+                            <hr>
+                            <li><a href="#">Termos e condições</a></li>
+                            <hr>
+                            <li><a href="#">Política de privacidade</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <a href="#" class="login_btn">Entrar</a>
-        </nav>
+                <a href="#" class="login_btn">Entrar</a>
+            </nav>
+        </div>
     </header>
     <div class="content_top">     
         <div class="header_container">
@@ -57,13 +61,21 @@
 
     <main>
         <section>
-            <div class="carusel">
-                <img src="https://inovatik.com/tivo/images/customer-logo-1.png" alt="logo">
-                <img src="https://inovatik.com/tivo/images/customer-logo-2.png" alt="logo">
-                <img src="https://inovatik.com/tivo/images/customer-logo-3.png" alt="logo">
-                <img src="https://inovatik.com/tivo/images/customer-logo-4.png" alt="logo">
-                <img src="https://inovatik.com/tivo/images/customer-logo-5.png" alt="logo">
-                <img src="https://inovatik.com/tivo/images/customer-logo-6.png" alt="logo">
+            <div class="container_carousel">
+                <div class="carousel">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-1.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-2.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-3.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-4.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-5.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-6.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-1.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-2.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-3.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-4.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-5.png" alt="logo">
+                    <img src="https://inovatik.com/tivo/images/customer-logo-6.png" alt="logo">
+                </div>
             </div>
             <div>
                 <p class="description">Descrição</p>
@@ -285,7 +297,7 @@
             </span>
         </div>
     </footer>
-
+    
     <script src="scroll.js"></script>
 </body>
 </html>
