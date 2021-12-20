@@ -18,27 +18,35 @@
     }
 }
 
+/* 
+foto:
+largura:155
+margin:45
+container:
+largura:1000
+*/
+
 /*keyframe da animação do carrosel*/
 @keyframes scroll{
     0%{ right: 0px;}
 
     15%{ right: 0px;}/*porcentagem anterior ao estouro para aumentar a velocidade do movimento*/
-    16%{ right: 175px;}
+    16%{ right: 205px;}
     
-    31%{ right: 175px;}
-    32%{ right: 355px;}
+    31%{ right: 205px;}
+    32%{ right: 415px;}
     
-    49%{ right: 355px;}
-    50%{ right: 535px;}
+    49%{ right: 415px;}
+    50%{ right: 625px;}
     
-    65%{ right: 535px;}
-    66%{ right: 715px;}
+    65%{ right: 625px;}
+    66%{ right: 835px;}
     
-    83%{ right: 715px;}
-    84%{ right: 895px;}
+    83%{ right: 835px;}
+    84%{ right: 1055px;}
     
-    99%{ right: 895px;}
-    100% { right: 1055px;}/*soma de todas as imagens mais o margin*/
+    99%{ right: 1055px;}
+    100% { right: 1240px;}/*soma de todas as imagens mais o margin*/
 }
 $primary_color: #5f4dee;
 $secudary_color: #f0ffff;
@@ -92,7 +100,7 @@ svg.header-decoration{
 }
 .container_carousel{
     position: relative;
-    max-width: 1050px;
+    max-width: 1000px;
     overflow-y: auto;
     overflow-x: scroll;
     margin-bottom: 60px;
@@ -119,7 +127,7 @@ svg.header-decoration{
     }
     img {
         display: block;
-        margin-right: 25px;
+        margin-right: 55px;
     }
   }
 .carousel::-webkit-scrollbar {
@@ -516,22 +524,18 @@ section{
 .price p{
     margin-top: 0px;
 }
-.personal{
-    margin: 40px auto;
-    @include flex(column);
-    text-align: center;
-    max-width: 100%;
+#personal{
+    height: 200px;
     overflow: auto;
-    cursor: grab;
+    border: 1px solid red;
 
     div{
-        @include flex(row);
-        width: 1000px;
-        margin: 0px 100px;
+        @include flex(column);
+        align-items: center;
 
         span{
             display: block;
-            width: 700px;
+            width: 500px;
         }
     }
     img{
@@ -540,7 +544,7 @@ section{
         margin-right: 30px;
     }
 }
-.personal::-webkit-scrollbar {
+#personal::-webkit-scrollbar {
     width: 5px;
     border-radius: 5px;
 }
@@ -554,7 +558,6 @@ section{
     div{
         text-align: center;
     }
-
     h2{
         text-align: center;
         max-width: 450px;
@@ -646,11 +649,17 @@ form .login_btn{
     .container_gray .image_ctn{
         margin: 0px;
     }
-    .personal{
+    #personal{
         margin: 80px auto;
-        @include flex(row);
         text-align: left;
 
+        div{
+            flex-direction: row;
+        
+            span{
+                width: 800px;
+            }
+        }  
         blockquote{
             color: #6b747b;
             font-style: italic;
@@ -706,7 +715,7 @@ form .login_btn{
         padding: 20px;
 
     }
-    .personal img{
+    #personal img{
         margin: 0px;
     }
 }

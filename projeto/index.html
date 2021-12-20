@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <title>Landing Page</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+
     <link rel="stylesheet" href="estilo.css">
+    
+    <!--links para os ícones-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!--CDN do swiper-->
+    <link rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 <body id="home">
     <header> 
@@ -74,7 +80,6 @@
                     <img src="https://inovatik.com/tivo/images/customer-logo-3.png" alt="logo">
                     <img src="https://inovatik.com/tivo/images/customer-logo-4.png" alt="logo">
                     <img src="https://inovatik.com/tivo/images/customer-logo-5.png" alt="logo">
-                    <img src="https://inovatik.com/tivo/images/customer-logo-6.png" alt="logo">
                 </div>
             </div>
             <div>
@@ -209,41 +214,50 @@
                 </span>
                 
             </div>
-            <div>
-            <aside class="personal" id="personal">
-                <div>
-                    <img src="https://inovatik.com/tivo/images/testimonial-1.jpg" alt="person_image">
-                    <span>
-                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
-                        </blockquote>
-                        <cite>Jude Thorn - Online Marketer</cite>
-                    </span>
-                </div>
-                <div>
-                    <img src="https://inovatik.com/tivo/images/testimonial-2.jpg" alt="person_image">
-                    <span>
-                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
-                        </blockquote>
-                        <cite>Roy Smith - Developer</cite>
-                    </span>
-                </div>
-                <div>
-                    <img src="https://inovatik.com/tivo/images/testimonial-3.jpg" alt="person_image">
-                    <span>
-                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
-                        </blockquote>
-                        <cite>Marsha Singer - Online Marketer</cite>
-                    </span>
-                </div>
-                <div>
-                    <img src="https://inovatik.com/tivo/images/testimonial-4.jpg" alt="person_image">
-                    <span>
-                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
-                        </blockquote>
-                        <cite>Rondan Louis - Online Marketer</cite>
-                    </span>
-                </div>
-            </aside>
+            <div class="container-swiper">
+                <aside class="swiper" id="personal">
+                    <div class="swiper-wrapper">
+                        <!--primeiro slide-->
+                        <div class="swiper-slide">
+                            <img src="https://inovatik.com/tivo/images/testimonial-1.jpg" alt="person_image">
+                            <span>
+                                <blockquote>Ele executa todas as tarefas de marketing repetidas e permite que eu me concentre nas principais atividades de desenvolvimento, como pesquisa e design de novos produtos.Eu amo isso e recomendo a todos.
+                                </blockquote>
+                                <cite>Jude Thorn - Online Marketer</cite>
+                            </span>
+                        </div>
+                        <!--segundo slide-->
+                        <div class="swiper-slide">
+                            <img src="https://inovatik.com/tivo/images/testimonial-2.jpg" alt="person_image">
+                            <span>
+                                <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
+                                </blockquote>
+                                <cite>Roy Smith - Developer</cite>
+                            </span>
+                        </div>
+                        <!--terceiro slide-->
+                        <div class="swiper-slide">
+                            <img src="https://inovatik.com/tivo/images/testimonial-3.jpg" alt="person_image">
+                            <span>
+                                <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio cum accusantium eos, recusandae tenetur nihil aliquid error unde quo esse sapiente et molestiae ab mollitia laboriosam atque, itaque doloremque quas.
+                                </blockquote>
+                                <cite>Marsha Singer - Online Marketer</cite>
+                            </span>
+                        </div>
+                        <!--quarto slide-->
+                        <div class="swiper-slide">
+                            <img src="https://inovatik.com/tivo/images/testimonial-4.jpg" alt="person_image">
+                            <span>
+                                <blockquote>Eu adoro especialmente o módulo Ferramentas de Relatório porque ele me dá uma grande quantidade de informações com base em pequenas quantidades de informações coletadas em apenas algumas semanas de uso leve.
+                                </blockquote>
+                                <cite>Rondan Louis - Online Marketer</cite>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev" style="color: #494949; left: 10px;"></div>
+                    <div class="swiper-button-next" style="color: #494949; right: 10px;" ></div>
+                </aside>
+            </div>
             <form class="email_box">
                 <div>
                     <p class="description">BOLETIM DE NOTÍCIAS</p>
@@ -298,6 +312,7 @@
         </div>
     </footer>
     
+    <script src="swiper.js"></script>
     <script src="scroll.js"></script>
 </body>
 </html>
