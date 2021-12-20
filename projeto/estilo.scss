@@ -34,23 +34,24 @@ largura:1000
     16%{ right: 205px;}
     
     31%{ right: 205px;}
-    32%{ right: 415px;}
+    32%{ right: 410px;}
     
-    49%{ right: 415px;}
-    50%{ right: 625px;}
+    49%{ right: 410px;}
+    50%{ right: 615px;}
     
-    65%{ right: 625px;}
-    66%{ right: 835px;}
+    65%{ right: 615px;}
+    66%{ right: 820px;}
     
-    83%{ right: 835px;}
-    84%{ right: 1055px;}
+    83%{ right: 820px;}
+    84%{ right: 1025px;}
     
-    99%{ right: 1055px;}
-    100% { right: 1240px;}/*soma de todas as imagens mais o margin*/
+    99%{ right: 1025px;}
+    100% { right: 1230px;}/*soma de todas as imagens mais o margin*/
 }
 $primary_color: #5f4dee;
 $secudary_color: #f0ffff;
 $terciary_color: #494949;
+$lightgray: #ebebeb;
 
 *{
     margin: 0px;
@@ -381,13 +382,20 @@ section{
     div.marketing_ctn{
         @include flex(column);
         text-align: center;
-        margin-top: 0px;
-        
-        img{
-            width: 55%;
+        justify-content: space-between;
+        margin: 40px 0px;
+
+
+        span{
+            margin-bottom: 40px;
         }
-        p{
-            color: $terciary_color;
+        img{
+            width: 50%;
+        }
+        p{/********************************voltar para mexer aqui****************************/
+            max-width: 600px;
+            color: #6b747b;
+            font-size: 1em;
         }
     }
 }   
@@ -410,9 +418,28 @@ section{
     .image_ctn{
         margin: 0px 15px;
     }
+    /*.play-button{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: block;
+        background-color: $primary_color;
+        border-radius: 50%;
+
+        span{
+            position: relative;
+            z-index: 3;
+            width: 0;
+            height: 0;
+            background-color: $primary_color;
+            border-left: 26px solid #fff;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+        }
+    }*/
 }
 .container_gray > div> p{
-    margin: 20px auto 40px auto;
+    margin: 20px auto;
     color: $terciary_color;
     max-width: 650px;
     text-align: center;
@@ -422,7 +449,9 @@ section{
 
     span{
         @include flex(row);
+        align-items: center;
         border-bottom: 2px solid #b8b8b8;
+        box-sizing: border-box;
         padding-bottom: 5px;
         color: #6b747b;
         cursor: pointer;
@@ -438,10 +467,6 @@ section{
             display: inline;
             margin-right: 12px;
             font-weight: 600;
-        }
-        i{
-            position: relative;
-            top: 6px;
         }
     }   
 }
@@ -496,7 +521,7 @@ section{
 }
 .features_img{
     width: 80%;
-    margin-top: 45px;
+    margin: 45px 0px;
 }
 .flex > .price{
     border: 2px solid #5c2be23d;
@@ -524,32 +549,45 @@ section{
 .price p{
     margin-top: 0px;
 }
+.container-swiper{
+    margin: 80px auto;
+}
 #personal{
-    height: 200px;
-    overflow: auto;
-    border: 1px solid red;
+    box-sizing: border-box;
+    position: relative;
 
-    div{
+    .swiper-slide{
         @include flex(column);
         align-items: center;
+        padding: 0px 50px;
+        box-sizing: border-box;
 
         span{
-            display: block;
-            width: 500px;
+            text-align: center;
         }
     }
     img{
-        width: 100px;
+        width: 150px;
         border-radius: 50%;
-        margin-right: 30px;
+        margin-right: 40px;
     }
+    blockquote{
+        color: #6b747b;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+    cite{
+        font-weight: 600;
+        font-style: normal;
+    }
+
 }
 #personal::-webkit-scrollbar {
     width: 5px;
     border-radius: 5px;
 }
 .email_box{
-    background-color: #ebebeb62;
+    background-color: $lightgray;
     border-radius: 6px;
     padding: 40px;
     @include flex(column);
@@ -613,7 +651,7 @@ form .login_btn{
            margin-bottom: 20px;
         }
         p{
-            max-width: 400px;
+            width: 300px;
         }
     }
     nav.links{
@@ -640,7 +678,7 @@ form .login_btn{
     }
     .email_box{
         padding: 80px;
-        margin: 0px;
+        margin: 0px auto;
     
         input.txt{
             width: 600px;
@@ -650,26 +688,14 @@ form .login_btn{
         margin: 0px;
     }
     #personal{
-        margin: 80px auto;
-        text-align: left;
 
-        div{
+        .swiper-slide{
             flex-direction: row;
         
             span{
-                width: 800px;
+                text-align: left;
             }
         }  
-        blockquote{
-            color: #6b747b;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-        cite{
-            font-weight: 600;
-            font-style: normal;
-        }
-    
         img{
             width: 150px;
         }
@@ -699,7 +725,7 @@ form .login_btn{
 
         &:hover{
             color: $primary_color;
-            background-color: #ebebeb62;
+            background-color: $lightgray;
             transition-duration: 0.5s;
         }
     }
@@ -716,6 +742,7 @@ form .login_btn{
 
     }
     #personal img{
+        width: 100px;
         margin: 0px;
     }
 }

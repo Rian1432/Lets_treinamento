@@ -23,31 +23,31 @@ largura:1000
     right: 205px;
   }
   32% {
-    right: 415px;
+    right: 410px;
   }
   49% {
-    right: 415px;
+    right: 410px;
   }
   50% {
-    right: 625px;
+    right: 615px;
   }
   65% {
-    right: 625px;
+    right: 615px;
   }
   66% {
-    right: 835px;
+    right: 820px;
   }
   83% {
-    right: 835px;
+    right: 820px;
   }
   84% {
-    right: 1055px;
+    right: 1025px;
   }
   99% {
-    right: 1055px;
+    right: 1025px;
   }
   100% {
-    right: 1240px;
+    right: 1230px;
   }
   /*soma de todas as imagens mais o margin*/
 }
@@ -66,31 +66,31 @@ largura:1000
     right: 205px;
   }
   32% {
-    right: 415px;
+    right: 410px;
   }
   49% {
-    right: 415px;
+    right: 410px;
   }
   50% {
-    right: 625px;
+    right: 615px;
   }
   65% {
-    right: 625px;
+    right: 615px;
   }
   66% {
-    right: 835px;
+    right: 820px;
   }
   83% {
-    right: 835px;
+    right: 820px;
   }
   84% {
-    right: 1055px;
+    right: 1025px;
   }
   99% {
-    right: 1055px;
+    right: 1025px;
   }
   100% {
-    right: 1240px;
+    right: 1230px;
   }
   /*soma de todas as imagens mais o margin*/
 }
@@ -568,20 +568,49 @@ section div.marketing_ctn {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin-top: 0px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 40px 0px;
+}
+
+section div.marketing_ctn span {
+  margin-bottom: 40px;
 }
 
 section div.marketing_ctn img {
-  width: 55%;
+  width: 50%;
 }
 
 section div.marketing_ctn p {
-  color: #494949;
+  /********************************voltar para mexer aqui****************************/
+  max-width: 600px;
+  color: #6b747b;
+  font-size: 1em;
 }
 
 .container_gray {
   background-color: #ebebeb;
   padding: 80px 0px;
+  /*.play-button{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: block;
+        background-color: $primary_color;
+        border-radius: 50%;
+
+        span{
+            position: relative;
+            z-index: 3;
+            width: 0;
+            height: 0;
+            background-color: $primary_color;
+            border-left: 26px solid #fff;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+        }
+    }*/
 }
 
 .container_gray nav {
@@ -602,7 +631,7 @@ section div.marketing_ctn p {
 }
 
 .container_gray > div > p {
-  margin: 20px auto 40px auto;
+  margin: 20px auto;
   color: #494949;
   max-width: 650px;
   text-align: center;
@@ -623,7 +652,10 @@ section div.marketing_ctn p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  align-items: center;
   border-bottom: 2px solid #b8b8b8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding-bottom: 5px;
   color: #6b747b;
   cursor: pointer;
@@ -640,11 +672,6 @@ section div.marketing_ctn p {
   display: inline;
   margin-right: 12px;
   font-weight: 600;
-}
-
-.links span i {
-  position: relative;
-  top: 6px;
 }
 
 .flex {
@@ -718,7 +745,7 @@ section div.marketing_ctn p {
 
 .features_img {
   width: 80%;
-  margin-top: 45px;
+  margin: 45px 0px;
 }
 
 .flex > .price {
@@ -752,13 +779,17 @@ section div.marketing_ctn p {
   margin-top: 0px;
 }
 
-#personal {
-  height: 200px;
-  overflow: auto;
-  border: 1px solid red;
+.container-swiper {
+  margin: 80px auto;
 }
 
-#personal div {
+#personal {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+#personal .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -770,17 +801,30 @@ section div.marketing_ctn p {
       -ms-flex-align: center;
           align-items: center;
   align-items: center;
+  padding: 0px 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-#personal div span {
-  display: block;
-  width: 500px;
+#personal .swiper-slide span {
+  text-align: center;
 }
 
 #personal img {
-  width: 100px;
+  width: 150px;
   border-radius: 50%;
-  margin-right: 30px;
+  margin-right: 40px;
+}
+
+#personal blockquote {
+  color: #6b747b;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#personal cite {
+  font-weight: 600;
+  font-style: normal;
 }
 
 #personal::-webkit-scrollbar {
@@ -789,7 +833,7 @@ section div.marketing_ctn p {
 }
 
 .email_box {
-  background-color: #ebebeb62;
+  background-color: #ebebeb;
   border-radius: 6px;
   padding: 40px;
   display: -webkit-box;
@@ -884,7 +928,7 @@ form .login_btn:hover {
     margin-bottom: 20px;
   }
   section div.marketing_ctn p {
-    max-width: 400px;
+    width: 300px;
   }
   nav.links {
     margin-bottom: 35px;
@@ -914,7 +958,7 @@ form .login_btn:hover {
   }
   .email_box {
     padding: 80px;
-    margin: 0px;
+    margin: 0px auto;
   }
   .email_box input.txt {
     width: 600px;
@@ -922,27 +966,14 @@ form .login_btn:hover {
   .container_gray .image_ctn {
     margin: 0px;
   }
-  #personal {
-    margin: 80px auto;
-    text-align: left;
-  }
-  #personal div {
+  #personal .swiper-slide {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  #personal div span {
-    width: 800px;
-  }
-  #personal blockquote {
-    color: #6b747b;
-    font-style: italic;
-    margin-bottom: 10px;
-  }
-  #personal cite {
-    font-weight: 600;
-    font-style: normal;
+  #personal .swiper-slide span {
+    text-align: left;
   }
   #personal img {
     width: 150px;
@@ -974,7 +1005,7 @@ form .login_btn:hover {
 
 #content-icons .fab:hover {
   color: #5f4dee;
-  background-color: #ebebeb62;
+  background-color: #ebebeb;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
@@ -990,6 +1021,7 @@ form .login_btn:hover {
     padding: 20px;
   }
   #personal img {
+    width: 100px;
     margin: 0px;
   }
 }
