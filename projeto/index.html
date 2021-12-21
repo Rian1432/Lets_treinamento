@@ -34,6 +34,9 @@
                             <hr>
                             <li><a href="#">Conecte-se</a></li>
                             <hr>
+                            <!------------adicionar modal aqui----------->
+                            <li><button id="modal_btn">Contato</button></li>
+                            <hr>
                             <li><a href="#">Detalhes do artigo</a></li>
                             <hr>
                             <li><a href="#">Termos e condições</a></li>
@@ -46,6 +49,15 @@
             </nav>
         </div>
     </header>
+    <!-------modal aqui------->
+    <div id="myModal" class="modal">
+        <!--conteúdo do modal-->
+        <div class="modaContent">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
     <div class="content_top">     
         <div class="header_container">
             <div class="header_content">
@@ -113,7 +125,7 @@
             <p class="description">Recursos</p>
             <div>    
                 <h2>Automação de Marketing</h2>
-                <p>Leve sua estratégia de negócios para o próximo nível e automatize suas tarefas de marketing para economizar tempo no desenvolvimento de produtos. Tivo pode fornecer resultados em menos de 2 semanas</p>
+                <p class="text-ctn">Leve sua estratégia de negócios para o próximo nível e automatize suas tarefas de marketing para economizar tempo no desenvolvimento de produtos. Tivo pode fornecer resultados em menos de 2 semanas</p>
                 <nav class="links">
                     <span>
                         <i class="fas fa-list"></i>
@@ -132,7 +144,7 @@
                     <img class="features_img" src="https://inovatik.com/tivo/images/feature-app-1.svg" alt="List_building_image">
                     <span>
                         <h3>List Building is easier than ever</h3>
-                        <p>É muito fácil começar a usar o Tivo. Basta preencher e enviar o Formulário de Inscrição e você terá acesso ao aplicativo e a todos os seus recursos em no máximo 24h. Use tutoriais para aprender mais rápido</p>
+                        <p>É muito fácil começar a usar o Tivo. Basta preencher e enviar o <a class="form-submit" href="#">Formulário de Inscrição</a> e você terá acesso ao aplicativo e a todos os seus recursos em no máximo 24h. Use tutoriais para aprender mais rápido</p>
                         <ul>
                             <li>Crie e incorpore formulários de boletins informativos funcionais de sites</li>
                             <li>Gerenciar formulários e páginas de destino para seus serviços online</li>
@@ -165,13 +177,15 @@
 <!-------final da terceira--------->
 
         <section class="container_gray">
-            <div>
-                <img class="image_ctn" src="https://inovatik.com/tivo/images/video-preview.svg" alt="site_construction">
-                <span class="play-button">
-                    <span></span>
-                </span>
-                <p>Qual a melhor maneira de mostrar o aplicativo saas de automação de marketing do Tivo do que apresentar em um vídeo algumas situações ótimas de cada módulo e ferramenta disponível para os usuários</p>
-            </div>
+            <div class="play-video">
+                <a href="https://www.youtube.com/watch?v=fLCjQJCekTs">
+                    <img class="image_ctn" src="https://inovatik.com/tivo/images/video-preview.svg" alt="site_construction">
+                    <span class="play-button">
+                        <span></span>
+                    </span>
+                </a>
+            </div>    
+                <p class="text-ctn">Qual a melhor maneira de mostrar o aplicativo saas de automação de marketing do Tivo do que apresentar em um vídeo algumas situações ótimas de cada módulo e ferramenta disponível para os usuários</p>
         </section>
         <section id="pricing">
             <p class="description">Preços</p>
@@ -179,40 +193,46 @@
             <div class="flex">
                 <span class="price">
                     <h3>INICIANTE</h3>
-                    <p class="valor">Grátis</p>
+                    <p class="cost">Grátis</p>
                     <p>Por 14 dias</p>
                     <hr>
                     <ul>
-                        <li>Módulo de marketing por email</li>
-                        <li>Gerenciamento de controle de usuário</li>
-                        <li>Edifício e limpeza da lista</li>
-                        <li>Coletar e relatar dados</li>
+                        <li><i class="fas fa-check"></i> Módulo de marketing por email</li>
+                        <li><i class="fas fa-times"></i> Gerenciamento de controle de usuário</li>
+                        <li><i class="fas fa-times"></i> Edifício e limpeza da lista</li>
+                        <li><i class="fas fa-times"></i> Coletar e relatar dados</li>
                     </ul>
                     <a class="login_btn" href="#">Inscrever-se</a>
                 </span>
                 <span class="price">
                     <h3>AVANÇADO</h3>
-                    <p class="valor">29,99</p>
+                    <span class="cost">
+                        <p class="value">$</p>
+                        <p>29,99</p>
+                    </span>
                     <p>mensal</p>
                     <hr>
                     <ul>
-                        <li>Módulo de marketing por email</li>
-                        <li>Gerenciamento de controle de usuário</li>
-                        <li>Edifício e limpeza da lista</li>
-                        <li>Coletar e relatar dados</li>
+                        <li><i class="fas fa-check"></i> Módulo de marketing por email</li>
+                        <li><i class="fas fa-check"></i> Gerenciamento de controle de usuário</li>
+                        <li><i class="fas fa-times"></i> Edifício e limpeza da lista</li>
+                        <li><i class="fas fa-times"></i> Coletar e relatar dados</li>
                     </ul>
                     <a class="login_btn" href="#">Inscrever-se</a>
                 </span>
                 <span class="price">
                     <h3>COMPLETO</h3>
-                    <p class="valor">39,99</p>
+                    <span class="cost">
+                        <p class="value">$</p>
+                        <p>39,99</p>
+                    </span>
                     <p>mensal</p>
                     <hr>
                     <ul>
-                        <li>Módulo de marketing por email</li>
-                        <li>Gerenciamento de controle de usuário</li>
-                        <li>Edifício e limpeza da lista</li>
-                        <li>Coletar e relatar dados</li>
+                        <li><i class="fas fa-check"></i> Módulo de marketing por email</li>
+                        <li><i class="fas fa-check"></i> Gerenciamento de controle de usuário</li>
+                        <li><i class="fas fa-check"></i> Edifício e limpeza da lista</li>
+                        <li><i class="fas fa-check"></i> Coletar e relatar dados</li>
                     </ul>
                     <a class="login_btn" href="#">Inscrever-se</a>
                 </span>
@@ -316,6 +336,7 @@
         </div>
     </footer>
     
+    <script src="modal.js"></script>
     <script src="swiper.js"></script>
     <script src="scroll.js"></script>
 </body>

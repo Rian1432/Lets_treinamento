@@ -5,6 +5,7 @@
     flex-direction: $direction;
     align-items: center;
 }
+/*mixin para criação de botões*/
 @mixin button ($padding,$bgcolor,$color){
     padding: $padding;
     border: 1px solid $secudary_color;
@@ -48,10 +49,18 @@ largura:1000
     99%{ right: 1025px;}
     100% { right: 1230px;}/*soma de todas as imagens mais o margin*/
 }
+/*keyframe da animação do botão de vídeo*/
+@keyframes pulse-border{
+    100%{ 
+        transform: scale(1.8);
+        background-color: transparent;
+    }
+}
+
 $primary_color: #5f4dee;
 $secudary_color: #f0ffff;
 $terciary_color: #494949;
-$lightgray: #ebebeb;
+$lightgray: #f4f9ff;
 
 *{
     margin: 0px;
@@ -71,7 +80,7 @@ hr{
 
 header{
     position: sticky;
-    z-index: 999;
+    z-index: 200;
     top: 0;
     width: 100vw;
     box-sizing: border-box;
@@ -101,7 +110,7 @@ svg.header-decoration{
 }
 .container_carousel{
     position: relative;
-    max-width: 1000px;
+    max-width: 585px;
     overflow-y: auto;
     overflow-x: scroll;
     margin-bottom: 60px;
@@ -237,7 +246,7 @@ div.header_container > div{
 }
 @media (min-width:930px){
     body{
-        border-top: 15px solid $primary_color;
+        border-top: 20px solid $primary_color;
         overflow-x: hidden;
         padding: 0px;
     }
@@ -268,6 +277,9 @@ div.header_container > div{
         img{
             margin: 0px;
         }
+    }
+    .container_carousel{
+        max-width: 1000px;
     }
     .btns{
         justify-content: flex-start;
@@ -355,8 +367,15 @@ div.header_container > div{
             margin-left: 0px;
         }
     }
+    .container_carousel{
+        max-width: 210px;
+    }
     .carusel{
         margin: 0px 60px 60px 60px;
+
+        img{
+            margin-right: 0px;
+        }
     }
 }
 
@@ -400,8 +419,8 @@ section{
     }
 }   
 .container_gray{
-    background-color: #ebebeb;
-    padding: 80px 0px;
+    background-color: $lightgray;
+    padding: 80px 10px;
 
     nav{
         margin: 40px 0px 0px 0px;
@@ -416,33 +435,73 @@ section{
         }
     }
     .image_ctn{
-        margin: 0px 15px;
+        width: 100%;
+        margin: 0px;
     }
-    /*.play-button{
+    .play-video{
+        position: relative;
+         a{
+            padding: 0;
+        }
+    }
+    .play-button{
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 43%;
         display: block;
-        background-color: $primary_color;
-        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        z-index: 10;
 
+       
+        &::after{
+            content: "";
+            position: absolute;
+            display: block;
+            top: 40%;
+            right: 50%;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background-color: $primary_color;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            display: block;
+            z-index: 3;
+            right: 50%;
+            top: 40%;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background-color: $primary_color;
+            
+            animation-name: "pulse-border";
+            animation-duration: 1500ms;
+            animation-iteration-count: infinite;
+            animation-direction: ease-out;
+            animation-delay: 0s;
+        }
         span{
             position: relative;
-            z-index: 3;
+            display: block;
+            z-index: 10;
             width: 0;
-            height: 0;
-            background-color: $primary_color;
-            border-left: 26px solid #fff;
+            right: 22px;
+            top: 34px;
+            background-color: transparent;
+            border-left: 20px solid #fff;
             border-top: 16px solid transparent;
             border-bottom: 16px solid transparent;
         }
-    }*/
-}
-.container_gray > div> p{
-    margin: 20px auto;
-    color: $terciary_color;
-    max-width: 650px;
-    text-align: center;
+    }
+     .text-ctn{
+        margin: 20px auto;
+        color: $terciary_color;
+        max-width: 650px;
+        text-align: center;
+    }
 }
 .links{
     margin-bottom: 0px;
@@ -477,7 +536,6 @@ section{
     ul{
         padding: 0px;
         list-style-position: inside;
-        
         list-style-type: square;
 
         li{
@@ -499,6 +557,12 @@ section{
     }
     span{
         max-width: 500px;
+        
+        .form-submit{
+            text-decoration: underline;
+            color: $primary_color;
+            padding: 0;
+        }
     }
     .login_btn{
         padding: 12px 45px;
@@ -526,7 +590,7 @@ section{
 }
 .flex > .price{
     border: 2px solid #5c2be23d;
-    padding: 50px 50px 80px 50px;
+    padding: 50px 40px 90px 40px;
     max-width: 250px;
     border-radius: 6px;
     text-align: center;
@@ -535,24 +599,42 @@ section{
     h3{
         color: $primary_color;
         font-size: 1.2em;
+        color: #2b44ff;
     }
     ul{
         text-align: justify;
-        list-style-position: outside;
+        list-style: none;
         padding: 0px 5px;
         text-indent: 0px;
     }
-    .valor{
+    .cost{
+        @include flex(row);
+        align-items: center;
+        justify-content: center;
         font-size: 2.7em;
         font-weight: 700;
         margin-bottom: 0px;
     }
+    .value{
+        font-size: 25px;
+        margin-right: 5px;
+        font-weight: 400;
+    }
     p{
         margin-top: 0px;
         color: #494949;
+        margin-bottom: 0;
     }
     li{
         color: #6b747b;
+
+        i{
+            font-size: 13px;
+            color: #2b44ff;
+        }
+        .fa-times{
+            color: #6b747b;
+        }
     }
     a{
         font-size: 14px;
@@ -583,7 +665,7 @@ section{
     img{
         width: 150px;
         border-radius: 50%;
-        margin-right: 40px;
+        margin-bottom: 15px;
     }
     blockquote{
         color: #6b747b;
@@ -684,7 +766,6 @@ form .login_btn{
     }
     .flex .price{
         margin-bottom: 0px;
-        padding: 50px 40px 90px 40px;
     }
     .features_img{
         width: 46%;
@@ -712,6 +793,8 @@ form .login_btn{
         }  
         img{
             width: 150px;
+            margin-bottom: 0px;
+            margin-right: 40px;
         }
     }
     section h2{
@@ -758,6 +841,9 @@ form .login_btn{
     #personal img{
         width: 100px;
         margin: 0px;
+    }
+    .video-button{
+        top: 40%;
     }
 }
 
@@ -810,3 +896,48 @@ footer div{
         margin-bottom: 0px;
     }
 }
+#modal_btn{
+    border: none;
+    background: transparent;
+    color: $lightgray;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 300; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
