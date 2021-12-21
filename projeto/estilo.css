@@ -120,7 +120,7 @@ header {
   width: 100vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 8px 40px;
+  padding: 10px 40px;
   background-color: #5f4dee;
   color: #f0ffff;
 }
@@ -750,33 +750,48 @@ section div.marketing_ctn p {
 
 .flex > .price {
   border: 2px solid #5c2be23d;
-  padding: 60px 30px;
+  padding: 50px 50px 80px 50px;
   max-width: 250px;
   border-radius: 6px;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.price h3 {
+.flex > .price h3 {
   color: #5f4dee;
   font-size: 1.2em;
 }
 
-.price ul {
+.flex > .price ul {
   text-align: justify;
-  list-style-position: inside;
+  list-style-position: outside;
   padding: 0px 5px;
   text-indent: 0px;
 }
 
-.price .valor {
+.flex > .price .valor {
   font-size: 2.7em;
   font-weight: 700;
   margin-bottom: 0px;
 }
 
-.price p {
+.flex > .price p {
   margin-top: 0px;
+  color: #494949;
+}
+
+.flex > .price li {
+  color: #6b747b;
+}
+
+.flex > .price a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.flex > .price hr {
+  margin: 30px 0px;
+  border-color: #5c2be23d;
 }
 
 .container-swiper {
@@ -855,9 +870,8 @@ section div.marketing_ctn p {
 
 .email_box h2 {
   text-align: center;
-  max-width: 450px;
   margin: 0px auto 40px auto;
-  font-size: 1.5em;
+  font-size: 2.0em;
 }
 
 .email_box input {
@@ -951,7 +965,7 @@ form .login_btn:hover {
   }
   .flex .price {
     margin-bottom: 0px;
-    padding: 60px 30px;
+    padding: 50px 40px 90px 40px;
   }
   .features_img {
     width: 46%;
@@ -959,6 +973,7 @@ form .login_btn:hover {
   .email_box {
     padding: 80px;
     margin: 0px auto;
+    width: 65%;
   }
   .email_box input.txt {
     width: 600px;
