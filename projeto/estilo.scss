@@ -8,7 +8,7 @@
 /*mixin para criação de botões*/
 @mixin button ($padding,$bgcolor,$color){
     padding: $padding;
-    border: 1px solid $secudary_color;
+    border: 1px solid $secundary_color;
     border-radius: 25px;
 
     &:hover{
@@ -58,7 +58,7 @@ largura:1000
 }
 
 $primary_color: #5f4dee;
-$secudary_color: #f0ffff;
+$secundary_color: #f0ffff;
 $terciary_color: #494949;
 $lightgray: #f4f9ff;
 
@@ -69,7 +69,7 @@ $lightgray: #f4f9ff;
 a{
     text-decoration: none;
     padding: 5px;
-    color: $secudary_color;
+    color: $secundary_color;
 }
 hr{
     margin: 10px 0px;
@@ -86,7 +86,7 @@ header{
     box-sizing: border-box;
     padding: 10px 40px;
     background-color: $primary_color;
-    color: $secudary_color;
+    color: $secundary_color;
     
     img{
         display: inline;
@@ -102,7 +102,7 @@ header{
 .content_top{
     background-color: $primary_color;
     padding-top: 40px;
-    color: $secudary_color;
+    color: $secundary_color;
     overflow: hidden;
 }
 svg.header-decoration{
@@ -199,12 +199,12 @@ svg.header-decoration{
     hr{
         border: none;
         height: 1px;
-        background-color: $secudary_color;
+        background-color: $secundary_color;
         margin: 13px 0px;
     }
 }
 .menu .login_btn{
-    @include button(6px 25px, $secudary_color, $primary_color);
+    @include button(6px 25px, $secundary_color, $primary_color);
     margin: 0px 10px;
     z-index: 3;
 }
@@ -234,13 +234,13 @@ div.header_container > div{
     justify-content: center;
 
     a.container_btn{
-        @include button(12px 45px, $primary_color, $secudary_color);
-        background-color: $secudary_color;
+        @include button(12px 45px, $primary_color, $secundary_color);
+        background-color: $secundary_color;
         color: $primary_color;
         margin-right: 7px;
         }
     a.container_btn2{
-        @include button(12px 45px, $secudary_color, $primary_color);
+        @include button(12px 45px, $secundary_color, $primary_color);
         margin-left: 7px;
     }
 }
@@ -573,7 +573,7 @@ section{
         top: 20px;
 
         &:hover{
-            background-color: $secudary_color;
+            background-color: $secundary_color;
             color: $primary_color;
             border: 1px solid $primary_color;
             transition-property: background-color, color;
@@ -729,7 +729,7 @@ form .login_btn{
 
     &:hover{
         border-color: $primary_color;
-        background-color: $secudary_color;
+        background-color: $secundary_color;
         color: $primary_color;
         transition-property: background-color, color;
         transition-duration: 0.5s;
@@ -905,7 +905,7 @@ footer div{
 }
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /*mudar para display none*/              /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 300; /* Sit on top */
     left: 0;
@@ -928,8 +928,11 @@ footer div{
   
   /* The Close Button */
   .close {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    z-index: 5;
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
   }
@@ -940,4 +943,65 @@ footer div{
     text-decoration: none;
     cursor: pointer;
   }
+.modalRegister{
+    background-color: $lightgray;
+    width: 80%;
+    margin: 60px auto;
+    float: clear;
+
+    div{
+        @include flex(column);
+        align-items: center;
+        padding: 20px 0px 20px 20px;
+    }
+    h2{
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    label{
+        font-size: 1.1em;
+        font-weight: 600;
+        color: $terciary_color;
+        text-align: left;
+    }
+    input{
+        display: block;
+        margin-bottom: 20px;
+        width: 250px;
+        height: 25px;
+        border-radius: 2px;
+        border: 2px solid #b8b8b8;
+    }
+    .submit{
+        @include button (5px 10px, $secundary_color, $primary_color);
+        border: 1px solid $primary_color;
+        color: $secundary_color;
+        background-color: $primary_color;
+        border-radius: 25px;
+        cursor: pointer;
+        height: 50px;
+        width: 200px;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width: 930px) {
+    .modalRegister{
+        @include flex(row);
+        align-items: flex-start;
+        position: relative;
+
+        div{
+            width: 50%;
+        }
+        .register_decoration{
+            padding: 20px 0px;
+            position: relative;
+            height: 100vh;
+            box-sizing: border-box;
+            padding: 30px;
+            background-color: $primary_color;
+
+        }
+    }
+}
   

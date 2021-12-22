@@ -1240,7 +1240,8 @@ footer div {
 
 /* The Modal (background) */
 .modal {
-  display: none;
+  display: block;
+  /*mudar para display none*/
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
@@ -1273,8 +1274,11 @@ footer div {
 
 /* The Close Button */
 .close {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  z-index: 5;
   color: #aaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
 }
@@ -1284,5 +1288,102 @@ footer div {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modalRegister {
+  background-color: #f4f9ff;
+  width: 80%;
+  margin: 60px auto;
+  float: clear;
+}
+
+.modalRegister div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: center;
+  padding: 20px 0px 20px 20px;
+}
+
+.modalRegister h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.modalRegister label {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #494949;
+  text-align: left;
+}
+
+.modalRegister input {
+  display: block;
+  margin-bottom: 20px;
+  width: 250px;
+  height: 25px;
+  border-radius: 2px;
+  border: 2px solid #b8b8b8;
+}
+
+.modalRegister .submit {
+  padding: 5px 10px;
+  border: 1px solid #f0ffff;
+  border-radius: 25px;
+  border: 1px solid #5f4dee;
+  color: #f0ffff;
+  background-color: #5f4dee;
+  border-radius: 25px;
+  cursor: pointer;
+  height: 50px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.modalRegister .submit:hover {
+  background-color: #f0ffff;
+  color: #5f4dee;
+  -webkit-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+@media screen and (min-width: 930px) {
+  .modalRegister {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    position: relative;
+  }
+  .modalRegister div {
+    width: 50%;
+  }
+  .modalRegister .register_decoration {
+    padding: 20px 0px;
+    position: relative;
+    height: 100vh;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 30px;
+    background-color: #5f4dee;
+  }
 }
 /*# sourceMappingURL=estilo.css.map */
