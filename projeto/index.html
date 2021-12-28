@@ -69,11 +69,11 @@
                     </span>
                     <span>
                         <label for="phone">Telefone:</label>
-                        <input id="telefone" onkeyup="mascaraFone(event)" placeholder="ex: (00) 00000-0000" maxlength="15" required>
+                        <input id="phone" onkeyup="phoneMask(event)" placeholder="ex: (00) 00000-0000" maxlength="15" required>
                     </span>
                     <span>
                         <label for="cep">CEP:</label>
-                        <input type="text" id="cep" onkeypress="mascara(this, '#####-###')" maxlength="9" placeholder="ex: 00000-000"  required>
+                        <input type="text" id="cep" onkeypress="mask(this, '#####-###')" maxlength="9" placeholder="ex: 00000-000"  required>
                     </span>
                     
                     <span>
@@ -214,6 +214,35 @@
 
         <!----------final da segunda-------->
 
+        <div id="lightbox">
+            <!--conteúdo do modal-->
+            <div class="modalContent">
+                <div class="modalplay">
+                    <div class="lightbox-container">
+                        <img src="https://inovatik.com/tivo/images/details-lightbox.jpg" alt="lightbox-image"> 
+                        <div>
+                            <h2>Definição de metas</h2>
+                            <p>O aplicativo pode ajudá-lo facilmente a acompanhar a evolução do seu desenvolvimento pessoal se você reservar um tempo para configurá-lo.</p>
+                            
+                            <h3>Feedback do usuário</h3>
+                            <p>Este é um ótimo aplicativo que pode ajudá-lo a economizar tempo e tornar sua vida mais fácil. E ajudará a melhorar sua produtividade.
+                            </p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Painel da tela inicial</li>
+                                <li><i class="fas fa-check"></i> Relatório de gráfico de estatísticas</li>
+                                <li><i class="fas fa-check"></i> Layout do calendário de eventos</li>
+                                <li><i class="fas fa-check"></i> Tela de detalhes de localização</li>
+                                <li><i class="fas fa-check"></i> Interface de etapas de integração</li>
+                            </ul>
+                            <div>
+                                <button class="lightbox-button1">Preços</button>
+                                <button class="lightbox-button2">Voltar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section id="details">
             <div class="flex">
                 <span>
@@ -231,26 +260,25 @@
         </section>
 
 <!-------final da terceira--------->
-
-        <section class="container_gray">
-            <div id="myModal" class="modal">
+<!--modal aqui-->
+            <div id="modalVideo">
                 <!--conteúdo do modal-->
                 <div class="modalContent">
-                    <div class="modalvideo">
-                        <span class="close">&times;</span>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/fLCjQJCekTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="modalplay">
+                        <span class="closeVideo">&times;</span>
+                        <iframe width="900" height="506" src="https://www.youtube.com/embed/fLCjQJCekTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
+        <section class="container_gray">
             <div class="play-video">
-                <a href="#">
-                    <img class="image_ctn" src="https://inovatik.com/tivo/images/video-preview.svg" alt="site_construction">
-                    <span class="play-button">
-                        <span></span>
-                    </span>
-                </a>
-            </div>    
+                <img class="image_ctn" src="https://inovatik.com/tivo/images/video-preview.svg" alt="site_construction">
+                <span class="play-button">
+                    <span></span>
+                </span>
+            </div>   
+<!--mexendo aqui-->
                 <p class="text-ctn">Qual a melhor maneira de mostrar o aplicativo saas de automação de marketing do Tivo do que apresentar em um vídeo algumas situações ótimas de cada módulo e ferramenta disponível para os usuários</p>
         </section>
         <section id="pricing">
@@ -402,11 +430,11 @@
         </div>
     </footer>
 
-    <script src="viacep.js"></script>
-    <script src="cepMask.js"></script>
-    <script src="phoneMask.js"></script>
-    <script src="modal.js"></script>
-    <script src="swiper.js"></script>
-    <script src="scroll.js"></script>
+    <script src="JS/viacep.js"></script>
+    <script src="JS/cepMask.js"></script>
+    <script src="JS/phoneMask.js"></script>
+    <script src="JS/modal.js"></script>
+    <script src="JS/swiper.js"></script>
+    <script src="JS/scroll.js"></script>
 </body>
 </html>

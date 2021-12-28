@@ -14,7 +14,7 @@
  neste código não é possivel inserir () ou [], apenas . (ponto), - (hifén) ou espaço
  */
 
- function mascara(t, mask){
+ function mask(t, mask){
  var i = t.value.length;
  var saida = mask.substring(1,0);
  var texto = mask.substring(i)

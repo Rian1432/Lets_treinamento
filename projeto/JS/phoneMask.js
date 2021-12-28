@@ -1,5 +1,5 @@
-function mascaraFone(event) {
-    var valor = document.getElementById("telefone").attributes[0].ownerElement['value'];
+function phoneMask(event) {
+    var valor = document.getElementById("phone").attributes[0].ownerElement['value'];
     var retorno = valor.replace(/\D/g, "");
     retorno = retorno.replace(/^0/, "");
     if (retorno.length > 10) {
@@ -17,5 +17,5 @@ function mascaraFone(event) {
         retorno = retorno.replace(/^(\d*)/, "($1");
       }
     }
-    document.getElementById("telefone").attributes[0].ownerElement['value'] = retorno;
+    document.getElementById("phone").attributes[0].ownerElement['value'] = retorno;
   }
