@@ -640,6 +640,7 @@ section div.marketing_ctn p {
 
 .container_gray .play-video {
   position: relative;
+  cursor: pointer;
 }
 
 .container_gray .play-video a {
@@ -1240,7 +1241,7 @@ footer div {
 
 /* The Modal (background) */
 .modal {
-  display: block;
+  display: none;
   /*mudar para display none*/
   /* Hidden by default */
   position: fixed;
@@ -1262,11 +1263,10 @@ footer div {
 }
 
 /* Modal Content/Box */
-.modal-content {
+.modalContent {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 5% auto;
   /* 15% from the top and centered */
-  padding: 20px;
   border: 1px solid #888;
   width: 80%;
   /* Could be more or less, depending on screen size */
@@ -1292,8 +1292,6 @@ footer div {
 
 .modalRegister {
   background-color: #f4f9ff;
-  width: 80%;
-  margin: 60px auto;
   float: clear;
 }
 
@@ -1376,7 +1374,7 @@ footer div {
   .modalRegister div {
     width: 50%;
   }
-  .modalRegister .register_decoration {
+  .modalRegister .register_address {
     padding: 20px 0px;
     position: relative;
     height: 100vh;

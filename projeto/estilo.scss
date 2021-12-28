@@ -440,6 +440,7 @@ section{
     }
     .play-video{
         position: relative;
+        cursor: pointer;
          a{
             padding: 0;
         }
@@ -905,7 +906,7 @@ footer div{
 }
 /* The Modal (background) */
 .modal {
-    display: block; /*mudar para display none*/              /* Hidden by default */
+    display: none; /*mudar para display none*/              /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 300; /* Sit on top */
     left: 0;
@@ -918,10 +919,9 @@ footer div{
   }
   
   /* Modal Content/Box */
-  .modal-content {
+  .modalContent {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    margin: 5% auto; /* 15% from the top and centered */
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
@@ -945,8 +945,6 @@ footer div{
   }
 .modalRegister{
     background-color: $lightgray;
-    width: 80%;
-    margin: 60px auto;
     float: clear;
 
     div{
@@ -993,7 +991,7 @@ footer div{
         div{
             width: 50%;
         }
-        .register_decoration{
+        .register_address{
             padding: 20px 0px;
             position: relative;
             height: 100vh;
