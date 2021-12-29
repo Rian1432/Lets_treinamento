@@ -112,6 +112,32 @@ largura:1000
   }
 }
 
+@-webkit-keyframes lightbox {
+  0% {
+    -webkit-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transition: rotateX(0deg);
+    transition: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox {
+  0% {
+    -webkit-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transition: rotateX(0deg);
+    transition: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0px;
   font-family: 'Open Sans', sans-serif;
@@ -128,13 +154,17 @@ hr {
   border: 1px solid;
 }
 
+p {
+  color: #6b747b;
+}
+
 /******/
 header {
   position: -webkit-sticky;
   position: sticky;
   z-index: 200;
   top: 0;
-  width: 100vw;
+  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 10px 40px;
@@ -344,6 +374,7 @@ div.header_container img {
 
 div.header_container p {
   margin: 20px 0px 30px 0px;
+  color: #f0ffff;
 }
 
 div.header_container > div {
@@ -579,7 +610,7 @@ section h2 {
   max-width: 400px;
   text-align: center;
   margin: 5px auto 20px auto;
-  color: #222222;
+  color: #2f363b;
 }
 
 section div.marketing_ctn {
@@ -609,7 +640,6 @@ section div.marketing_ctn img {
 }
 
 section div.marketing_ctn p {
-  /********************************voltar para mexer aqui****************************/
   max-width: 600px;
   color: #6b747b;
   font-size: 1em;
@@ -707,7 +737,6 @@ section div.marketing_ctn p {
 
 .container_gray .text-ctn {
   margin: 20px auto;
-  color: #494949;
   max-width: 650px;
   text-align: center;
 }
@@ -749,6 +778,14 @@ section div.marketing_ctn p {
   font-weight: 600;
 }
 
+#frame2 {
+  display: block;
+}
+
+#frame3 {
+  display: block;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -773,7 +810,7 @@ section div.marketing_ctn p {
 
 .flex ul li {
   margin-bottom: 10px;
-  color: #494949;
+  color: #6b747b;
 }
 
 .flex ul li::marker {
@@ -783,12 +820,12 @@ section div.marketing_ctn p {
 
 .flex h3 {
   font-size: 1.8em;
-  color: #222222;
+  color: #2f363b;
 }
 
 .flex p {
   margin: 20px 0px;
-  color: #494949;
+  color: #6b747b;
 }
 
 .flex span {
@@ -808,6 +845,9 @@ section div.marketing_ctn p {
   margin: 10px 0px;
   position: relative;
   top: 20px;
+  color: #f0ffff;
+  border: 1px solid #5f4dee;
+  cursor: pointer;
 }
 
 .flex .login_btn:hover {
@@ -883,6 +923,10 @@ section div.marketing_ctn p {
   margin-bottom: 0;
 }
 
+.flex > .price .deadline {
+  color: #6b747b;
+}
+
 .flex > .price li {
   color: #6b747b;
 }
@@ -950,6 +994,7 @@ section div.marketing_ctn p {
 }
 
 #personal cite {
+  color: #2f363b;
   font-weight: 700;
   font-style: normal;
 }
@@ -960,7 +1005,7 @@ section div.marketing_ctn p {
 }
 
 .email_box {
-  background-color: #f4f9ff;
+  background-color: #f5f6fb;
   border-radius: 6px;
   padding: 40px;
   display: -webkit-box;
@@ -987,8 +1032,8 @@ section div.marketing_ctn p {
 }
 
 .email_box input {
-  border: 2px solid #b8b8b8;
-  height: 40px;
+  border: 1px solid #b8b8b8;
+  height: 50px;
   padding: 15;
 }
 
@@ -1176,6 +1221,7 @@ footer h4 {
 
 footer p {
   margin-right: 5px;
+  color: #f0ffff;
 }
 
 footer ul {
@@ -1185,6 +1231,10 @@ footer ul {
 
 footer li {
   margin-bottom: 5px;
+}
+
+footer a {
+  padding: 0px;
 }
 
 footer div {
@@ -1240,10 +1290,9 @@ footer div {
 }
 
 /* The Modal (background) */
-.modal {
+.modal, #modalVideo, #lightbox {
   display: none;
   /*mudar para display none*/
-  /* Hidden by default */
   position: fixed;
   /* Stay in place */
   z-index: 300;
@@ -1258,7 +1307,7 @@ footer div {
   /* Enable scroll if needed */
   background-color: black;
   /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.75);
   /* Black w/ opacity */
 }
 
@@ -1266,14 +1315,11 @@ footer div {
 .modalContent {
   background-color: #fefefe;
   margin: 3% auto;
-  /* 5% from the top and centered */
-  border: 1px solid #888;
   width: 80%;
-  /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
-.close, .closeVideo {
+.close, .closeVideo, .close-lightbox {
   position: absolute;
   right: 10px;
   top: 0px;
@@ -1283,6 +1329,8 @@ footer div {
   font-weight: bold;
 }
 
+.close-lightbox:hover,
+.close-lightbox:focus,
 .closeVideo:hover,
 .closeVideo:focus,
 .close:hover,
@@ -1358,24 +1406,7 @@ footer div {
 
 /********** modal do vídeo do youtube **********/
 #modalVideo {
-  display: none;
-  /*mudar para display none*/
-  position: fixed;
-  /* Stay in place */
-  z-index: 300;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
   overflow: hidden;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
 }
 
 #modalVideo .modalContent {
@@ -1385,62 +1416,66 @@ footer div {
   border: 0;
 }
 
+/***************** modal lightbox *******************/
 #lightbox {
-  display: block;
-  /*mudar para display none*/
-  position: fixed;
-  z-index: 300;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   overflow: scroll;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.612);
 }
 
 #lightbox .modalContent {
-  width: 1150px;
-  padding: 50px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  max-width: 1150px;
+  padding: 15px;
+  position: relative;
+  /*animation-name: lightbox;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;*/
 }
 
 #lightbox .lightbox-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
 }
 
 #lightbox h2 {
   font-size: 1.7em;
+  color: #2f363b;
+  margin-top: 35px;
+}
+
+#lightbox h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #5f4dee;
+  margin-top: 10px;
 }
 
 #lightbox h3 {
   font-size: 1.5em;
   margin-top: 10px;
+  color: #2f363b;
 }
 
 #lightbox p {
   padding: 20px 0px;
+  line-height: 25px;
+  color: #6b747b;
 }
 
 #lightbox img {
+  width: 100%;
   border-radius: 10px;
-  margin-right: 50px;
+  margin-top: 20px;
 }
 
 #lightbox ul {
@@ -1452,6 +1487,7 @@ footer div {
 
 #lightbox ul li {
   margin: 15px 0px;
+  color: #6b747b;
 }
 
 #lightbox ul .fas {
@@ -1460,7 +1496,7 @@ footer div {
 }
 
 #lightbox .lightbox-button1 {
-  padding: 14px 30px;
+  padding: 14px 35px;
   border: 1px solid #f0ffff;
   border-radius: 25px;
   background-color: #5f4dee;
@@ -1480,7 +1516,7 @@ footer div {
 }
 
 #lightbox .lightbox-button2 {
-  padding: 14px 30px;
+  padding: 14px 35px;
   border: 1px solid #f0ffff;
   border-radius: 25px;
   background-color: transparent;
@@ -1499,7 +1535,7 @@ footer div {
           transition-duration: 0.5s;
 }
 
-@media screen and (min-width: 930px) {
+@media (min-width: 930px) {
   .modalRegister {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1527,6 +1563,29 @@ footer div {
             box-sizing: border-box;
     padding: 30px;
     background-color: #5f4dee;
+  }
+  #lightbox .lightbox-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #lightbox .lightbox-container h2 {
+    margin-top: 0px;
+  }
+  #lightbox .lightbox-container img {
+    width: 67%;
+    margin-top: 0px;
+    margin-right: 50px;
+  }
+  #lightbox .modalContent {
+    padding: 50px;
   }
 }
 /*# sourceMappingURL=estilo.css.map */

@@ -7,14 +7,18 @@ var btn = document.getElementById("modal_btn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+var body = document.querySelector("body");
+
+// clinar no botão para abrir o modal
 btn.onclick = function() {
   modal.style.display = "block";
+  body.style.overflow = "hidden";
 }
 
-// When the user clicks on <span> (x), close the modal
+// clicar no (X) para fechar
 span.onclick = function() {
   modal.style.display = "none";
+  body.style.overflow = "auto";
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -26,23 +30,25 @@ window.onclick = function(event) {
 
 /***************** lightbox modal *****************/
 
-var modalVideo = document.getElementById("lightbox");
+var modalLightbox = document.getElementById("lightbox");
 
-var play = document.getElementsByClassName("play-video");
+var openLightbox = document.getElementById("lightbox-btn");
 
-var closeVideo = document.getElementsByClassName("close-lightbox")[0];
+var closeLightbox = document.getElementsByClassName("close-lightbox")[0];
 
-play.onclick = function() {
-  modalVideo.style.display = "block";
+openLightbox.onclick = function() {
+  modalLightbox.style.display = "block";
+  body.style.overflow = "hidden";
 }
 
-closeVideo.onclick = function() {
-  modalVideo.style.display = "none";
+closeLightbox.onclick = function() {
+  modalLightbox.style.display = "none";
+  body.style.overflow = "auto";
 }
 
 window.onclick = function(event) {
-  if (event.target == modalVideo) {
-    modalVideo.style.display = "none";
+  if (event.target == modalLightbox) {
+    modalLightbox.style.display = "none";
   }
 }
 
@@ -50,20 +56,23 @@ window.onclick = function(event) {
 
 var modalVideo = document.getElementById("modalVideo");
 
-var play = document.getElementsByClassName("play-video");
+var openVideo = document.getElementById("play-video");
 
 var closeVideo = document.getElementsByClassName("closeVideo")[0];
 
-play.onclick = function() {
+openVideo.onclick = function() {
   modalVideo.style.display = "block";
+  body.style.overflow = "hidden";
 }
 
 closeVideo.onclick = function() {
   modalVideo.style.display = "none";
+  body.style.overflow = "auto";
 }
 
 window.onclick = function(event) {
   if (event.target == modalVideo) {
     modalVideo.style.display = "none";
+    body.style.overflow = "auto";
   }
 }
