@@ -87,10 +87,6 @@ hr{
     margin: 10px 0px;
     border: 1px solid ;
 }
-p{
-    color: $paragraph-color;
-}
-
 /******/////////////final de estilos globais\\\\\\\\\\\\******/
 
 header{
@@ -116,7 +112,7 @@ header{
 }
 .content_top{
     background-color: $primary_color;
-    padding-top: 40px;
+    padding-top: 15px;
     color: $secundary_color;
     overflow: hidden;
 }
@@ -227,7 +223,7 @@ div h1 p{
     display: inline;
 }
 div.header_container{
-    margin: 60px 15px 0px 25px;
+    margin: 60px 15px 0px 15px;
     @include flex(column);
 
     img{
@@ -241,7 +237,7 @@ div.header_container{
     }
 }
 div.header_container > div{
-    margin: 0px 5% 40px 5%;
+    margin-bottom: 40px;
     text-align: center;
 }
 .btns{
@@ -250,14 +246,14 @@ div.header_container > div{
     justify-content: center;
 
     a.container_btn{
-        @include button(12px 45px, $primary_color, $secundary_color);
+        @include button(12px 35px, $primary_color, $secundary_color);
         background-color: $secundary_color;
         color: $primary_color;
-        margin-right: 7px;
+        margin-right: 5px;
         }
     a.container_btn2{
-        @include button(12px 45px, $secundary_color, $primary_color);
-        margin-left: 7px;
+        @include button(12px 35px, $secundary_color, $primary_color);
+        margin-left: 5px;
     }
 }
 @media (min-width:930px){
@@ -274,14 +270,14 @@ div.header_container > div{
 
         img{
             position: relative;
-            left: 75px;
+            left: 105px;
             width: 55%;
-            transform: rotate(3deg);
+            transform: rotate(2deg);
         }
     }
     div.header_container > div{
         max-width: 40%;
-        margin-right: 1%;
+        margin-left: 60px;
         text-align: justify;
     }
     .menu{
@@ -317,7 +313,7 @@ div.header_container > div{
         position: fixed;
         height: 100vh;
         width: 100%;
-        right: -100%;/*********************mudar aqui*******************/
+        right: -100%;
         top: 0;
         padding-top: 65px; 
         a{
@@ -355,9 +351,12 @@ div.header_container > div{
             padding: 10px 15px;
             box-shadow: none;
         }
+        #modal_btn{
+            margin-left: 15px; 
+        }
     }
     .dropbox a::after{
-        top: 28.3%;
+        top: 36.5%;
     }
 }
 @media (max-width:480px){
@@ -365,23 +364,11 @@ div.header_container > div{
         padding: 15px 10px;
     }
     div.header_container > div{
-        margin: 0px 10px% 40px 1%;
-    }
-    .content_top{
-        padding-top: 60px;
+        margin: 0px 1% 40px 1%;
     }
     .btns{
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px;
-
-        a.container_btn{
-            margin-right: 0px;
-            margin-bottom: 10px;
-        }
-        a.container_btn2{
-            margin-left: 0px;
-        }
+        flex-direction: row;
+        align-items: flex-start;
     }
     .container_carousel{
         max-width: 210px;
@@ -411,7 +398,7 @@ section{
     h2{
         max-width: 400px;
         text-align: center;
-        margin: 5px auto 20px auto;
+        margin: 5px auto 40px auto;
         color: $title_color;
     }
     div.marketing_ctn{
@@ -423,6 +410,7 @@ section{
 
         span{
             margin-bottom: 40px;
+            color: $title_color;
         }
         img{
             width: 50%;
@@ -457,7 +445,8 @@ section{
     .play-video{
         position: relative;
         cursor: pointer;
-         a{
+        
+        a{
             padding: 0;
         }
     }
@@ -469,7 +458,6 @@ section{
         width: 40px;
         height: 40px;
         z-index: 10;
-
        
         &::after{
             content: "";
@@ -514,6 +502,7 @@ section{
         }
     }
      .text-ctn{
+        color: $paragraph-color;
         margin: 20px auto;
         max-width: 650px;
         text-align: center;
@@ -521,40 +510,42 @@ section{
 }
 .links{
     margin-bottom: 0px;
-
-    span{
-        @include flex(row);
-        align-items: center;
-        border-bottom: 2px solid #b8b8b8;
-        box-sizing: border-box;
-        padding-bottom: 5px;
-        color: $paragraph-color;
-        cursor: pointer;
-        display: inline;
-        font-size: 1.3em;
-
-        &:hover{
-            color: $primary_color;
-            border-color: $primary_color;
-        }
-
-        p{
-            display: inline;
-            margin-right: 12px;
-            font-weight: 600;
-        }
-    }   
 }
+#frame1-btn, #frame2-btn, #frame3-btn{
+    @include flex(row);
+    align-items: center;
+    border-bottom: 2px solid #b8b8b8;
+    box-sizing: border-box;
+    padding: 0px 10px 5px 10px;
+    color: $paragraph-color;
+    cursor: pointer;
+    display: inline;
+    font-size: 1.3em;
 
+    &:hover{
+        color: $primary_color;
+        border-color: $primary_color;
+    }
+
+    p{
+        display: inline;
+        font-weight: 600;
+        margin-left: 5px;
+    }
+}   
+.button-active{
+    color: $primary_color;
+}
 #frame2{
-    display: block;
+    display: none;
 }
 #frame3{
-    display: block;
+    display: none;
 }
 .flex{
     @include flex(column);
     justify-content: space-between;
+    margin: 0px 30px;
 
     ul{
         padding: 0px;
@@ -578,8 +569,9 @@ section{
         margin: 20px 0px ;
         color: $paragraph-color;
     }
-    span{
-        max-width: 500px;
+    .text-float{
+        margin: 0px;
+        max-width: 450px;
         
         .form-submit{
             text-decoration: underline;
@@ -609,9 +601,11 @@ section{
     hr{
         border-color: #b8b8b8;
     }
+    span{
+        max-width: 500px;
+    }
 }
 .features_img{
-    width: 80%;
     margin: 45px 0px;
 }
 .flex > .price{
@@ -738,6 +732,7 @@ section{
     }
     label{
         @include flex(row);
+        align-items: flex-start;
         margin: 15px 0px 15px 0px;
         font-size: 13px;
         color: #6b747b;
@@ -770,6 +765,7 @@ form .login_btn{
         flex-direction: row;
         align-items: flex-start;
         text-align: center;
+        margin: 0px 10px;
 
         img{
             width: 60%; 
@@ -782,20 +778,25 @@ form .login_btn{
     nav.links{
         margin-bottom: 35px;
     }
+
     .features_img{
         width: 80%;
         margin-top: 0px;
     }
     .flex{
+        margin: 0px auto;
         flex-direction: row;
         align-items: flex-start;
     
-        .flex span{
+        .span{
             margin-bottom: 40px;
         }
-    }
-    .flex .price{
-        margin-bottom: 0px;
+        .text-float{
+            float: right;
+        }
+        .price{
+            margin-bottom: 0px;
+        }
     }
     .features_img{
         width: 46%;
@@ -814,6 +815,9 @@ form .login_btn{
     }
     #personal{
 
+        .container-swiper{
+            margin: 80px auto;
+        }
         .swiper-slide{
             flex-direction: row;
         
@@ -860,6 +864,7 @@ form .login_btn{
 @media (max-width:480px){
     .flex{
         padding: 0px 10px;
+        margin: 0px 15px;
     }
     aside .login_btn{
         padding: 15px 26%;
@@ -872,8 +877,18 @@ form .login_btn{
         width: 100px;
         margin: 0px;
     }
-    .video-button{
-        top: 40%;
+    .play-button{
+        top: 30%;
+    }
+    #frame-btn1, #frame-btn2, #frame-btn3{
+        margin-top: 45px;
+    }
+    .links{
+        font-size: 14px;
+
+        span{
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -886,7 +901,6 @@ footer{
     font-size: 14px;
 
     span{
-        max-width: 320px;
         margin-bottom: 20px;
     }
     h4{
@@ -908,7 +922,7 @@ footer{
     }
 }
 footer div{
-    padding: 20px 10px;
+    padding: 20px 80px;
     @include flex(column);
     align-items: flex-start;
     background-color: $primary_color;
@@ -925,6 +939,10 @@ footer div{
         align-items: flex-start;
         justify-content: space-between;
         background-color: $primary_color;
+        
+        span{
+            max-width: 320px;
+        }
     }
     footer span p{
         margin-bottom: 0px;

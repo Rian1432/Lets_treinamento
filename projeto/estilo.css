@@ -154,10 +154,6 @@ hr {
   border: 1px solid;
 }
 
-p {
-  color: #6b747b;
-}
-
 /******/
 header {
   position: -webkit-sticky;
@@ -197,7 +193,7 @@ header .navbar {
 
 .content_top {
   background-color: #5f4dee;
-  padding-top: 40px;
+  padding-top: 15px;
   color: #f0ffff;
   overflow: hidden;
 }
@@ -352,7 +348,7 @@ div h1 p {
 }
 
 div.header_container {
-  margin: 60px 15px 0px 25px;
+  margin: 60px 15px 0px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,7 +374,7 @@ div.header_container p {
 }
 
 div.header_container > div {
-  margin: 0px 5% 40px 5%;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -402,12 +398,12 @@ div.header_container > div {
 }
 
 .btns a.container_btn {
-  padding: 12px 45px;
+  padding: 12px 35px;
   border: 1px solid #f0ffff;
   border-radius: 25px;
   background-color: #f0ffff;
   color: #5f4dee;
-  margin-right: 7px;
+  margin-right: 5px;
 }
 
 .btns a.container_btn:hover {
@@ -420,10 +416,10 @@ div.header_container > div {
 }
 
 .btns a.container_btn2 {
-  padding: 12px 45px;
+  padding: 12px 35px;
   border: 1px solid #f0ffff;
   border-radius: 25px;
-  margin-left: 7px;
+  margin-left: 5px;
 }
 
 .btns a.container_btn2:hover {
@@ -454,14 +450,14 @@ div.header_container > div {
   }
   div.header_container img {
     position: relative;
-    left: 75px;
+    left: 105px;
     width: 55%;
-    -webkit-transform: rotate(3deg);
-            transform: rotate(3deg);
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
   }
   div.header_container > div {
     max-width: 40%;
-    margin-right: 1%;
+    margin-left: 60px;
     text-align: justify;
   }
   .menu {
@@ -510,7 +506,6 @@ div.header_container > div {
     height: 100vh;
     width: 100%;
     right: -100%;
-    /*********************mudar aqui*******************/
     top: 0;
     padding-top: 65px;
   }
@@ -548,8 +543,11 @@ div.header_container > div {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
+  .dropbox_content #modal_btn {
+    margin-left: 15px;
+  }
   .dropbox a::after {
-    top: 28.3%;
+    top: 36.5%;
   }
 }
 
@@ -558,27 +556,16 @@ div.header_container > div {
     padding: 15px 10px;
   }
   div.header_container > div {
-    margin: 0px 10px 1%;
-  }
-  .content_top {
-    padding-top: 60px;
+    margin: 0px 1% 40px 1%;
   }
   .btns {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 20px;
-  }
-  .btns a.container_btn {
-    margin-right: 0px;
-    margin-bottom: 10px;
-  }
-  .btns a.container_btn2 {
-    margin-left: 0px;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   .container_carousel {
     max-width: 210px;
@@ -609,7 +596,7 @@ section .description {
 section h2 {
   max-width: 400px;
   text-align: center;
-  margin: 5px auto 20px auto;
+  margin: 5px auto 40px auto;
   color: #2f363b;
 }
 
@@ -633,6 +620,7 @@ section div.marketing_ctn {
 
 section div.marketing_ctn span {
   margin-bottom: 40px;
+  color: #2f363b;
 }
 
 section div.marketing_ctn img {
@@ -736,6 +724,7 @@ section div.marketing_ctn p {
 }
 
 .container_gray .text-ctn {
+  color: #6b747b;
   margin: 20px auto;
   max-width: 650px;
   text-align: center;
@@ -745,7 +734,7 @@ section div.marketing_ctn p {
   margin-bottom: 0px;
 }
 
-.links span {
+#frame1-btn, #frame2-btn, #frame3-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -760,30 +749,34 @@ section div.marketing_ctn p {
   border-bottom: 2px solid #b8b8b8;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding-bottom: 5px;
+  padding: 0px 10px 5px 10px;
   color: #6b747b;
   cursor: pointer;
   display: inline;
   font-size: 1.3em;
 }
 
-.links span:hover {
+#frame1-btn:hover, #frame2-btn:hover, #frame3-btn:hover {
   color: #5f4dee;
   border-color: #5f4dee;
 }
 
-.links span p {
+#frame1-btn p, #frame2-btn p, #frame3-btn p {
   display: inline;
-  margin-right: 12px;
   font-weight: 600;
+  margin-left: 5px;
+}
+
+.button-active {
+  color: #5f4dee;
 }
 
 #frame2 {
-  display: block;
+  display: none;
 }
 
 #frame3 {
-  display: block;
+  display: none;
 }
 
 .flex {
@@ -800,6 +793,7 @@ section div.marketing_ctn p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0px 30px;
 }
 
 .flex ul {
@@ -828,11 +822,12 @@ section div.marketing_ctn p {
   color: #6b747b;
 }
 
-.flex span {
-  max-width: 500px;
+.flex .text-float {
+  margin: 0px;
+  max-width: 450px;
 }
 
-.flex span .form-submit {
+.flex .text-float .form-submit {
   text-decoration: underline;
   color: #5f4dee;
   padding: 0;
@@ -864,8 +859,11 @@ section div.marketing_ctn p {
   border-color: #b8b8b8;
 }
 
+.flex span {
+  max-width: 500px;
+}
+
 .features_img {
-  width: 80%;
   margin: 45px 0px;
 }
 
@@ -1053,6 +1051,9 @@ section div.marketing_ctn p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin: 15px 0px 15px 0px;
   font-size: 13px;
   color: #6b747b;
@@ -1093,6 +1094,7 @@ form .login_btn:hover {
         -ms-flex-align: start;
             align-items: flex-start;
     text-align: center;
+    margin: 0px 10px;
   }
   section div.marketing_ctn img {
     width: 60%;
@@ -1109,6 +1111,7 @@ form .login_btn:hover {
     margin-top: 0px;
   }
   .flex {
+    margin: 0px auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1117,8 +1120,11 @@ form .login_btn:hover {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .flex .flex span {
+  .flex .span {
     margin-bottom: 40px;
+  }
+  .flex .text-float {
+    float: right;
   }
   .flex .price {
     margin-bottom: 0px;
@@ -1136,6 +1142,9 @@ form .login_btn:hover {
   }
   .container_gray .image_ctn {
     margin: 0px;
+  }
+  #personal .container-swiper {
+    margin: 80px auto;
   }
   #personal .swiper-slide {
     -webkit-box-orient: horizontal;
@@ -1186,6 +1195,7 @@ form .login_btn:hover {
 @media (max-width: 480px) {
   .flex {
     padding: 0px 10px;
+    margin: 0px 15px;
   }
   aside .login_btn {
     padding: 15px 26%;
@@ -1197,8 +1207,17 @@ form .login_btn:hover {
     width: 100px;
     margin: 0px;
   }
-  .video-button {
-    top: 40%;
+  .play-button {
+    top: 30%;
+  }
+  #frame-btn1, #frame-btn2, #frame-btn3 {
+    margin-top: 45px;
+  }
+  .links {
+    font-size: 14px;
+  }
+  .links span {
+    margin-bottom: 10px;
   }
 }
 
@@ -1211,7 +1230,6 @@ footer {
 }
 
 footer span {
-  max-width: 320px;
   margin-bottom: 20px;
 }
 
@@ -1238,7 +1256,7 @@ footer a {
 }
 
 footer div {
-  padding: 20px 10px;
+  padding: 20px 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1275,6 +1293,9 @@ footer div {
         -ms-flex-pack: justify;
             justify-content: space-between;
     background-color: #5f4dee;
+  }
+  footer > div span {
+    max-width: 320px;
   }
   footer span p {
     margin-bottom: 0px;
