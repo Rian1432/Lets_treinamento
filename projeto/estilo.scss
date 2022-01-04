@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+@import '_variables.scss';
+@import '_keyframes.scss';
+
 @mixin flex ($direction){
     display: flex;
     flex-direction: $direction;
@@ -18,52 +21,6 @@
         transition-duration: 0.5s;
     }
 }
-/*keyframe da animação do carrosel*/
-@keyframes scroll{
-    0%{ right: 0px;}
-
-    15%{ right: 0px;}/*porcentagem anterior ao estouro para aumentar a velocidade do movimento*/
-    16%{ right: 205px;}
-    
-    31%{ right: 205px;}
-    32%{ right: 410px;}
-    
-    49%{ right: 410px;}
-    50%{ right: 615px;}
-    
-    65%{ right: 615px;}
-    66%{ right: 820px;}
-    
-    83%{ right: 820px;}
-    84%{ right: 1025px;}
-    
-    99%{ right: 1025px;}
-    100% { right: 1230px;}/*soma de todas as imagens mais o margin*/
-}
-/*keyframe da animação do botão de vídeo*/
-@keyframes pulse-border{
-    100%{ 
-        transform: scale(1.8);
-        background-color: transparent;
-    }
-}
-@keyframes lightbox{
-    0%{
-        transform: rotateX(20deg);
-        opacity: 0.8;
-    }
-    100%{
-        transition: rotateX(0deg);
-        opacity: 1;
-    }
-}
-
-$primary_color: #5f4dee;
-$secundary_color: #f0ffff;
-$terciary_color: #494949;
-$title_color: #2f363b;
-$paragraph-color: #6b747b;
-$lightgray: #f4f9ff;
 
 *{
     margin: 0px;
@@ -238,13 +195,13 @@ div.header_container > div{
     justify-content: center;
 
     a.container_btn{
-        @include button(12px 35px, $primary_color, $secundary_color);
+        @include button(12px 25px, $primary_color, $secundary_color);
         background-color: $secundary_color;
         color: $primary_color;
         margin-right: 5px;
         }
     a.container_btn2{
-        @include button(12px 35px, $secundary_color, $primary_color);
+        @include button(12px 23px, $secundary_color, $primary_color);
         margin-left: 5px;
     }
 }
@@ -527,7 +484,7 @@ section{
     }
 }
 .links{
-    @include flex(row);
+    @include flex(column);
     margin-bottom: 0px;
     color: $paragraph-color;
     border-color: #b8b8b8;
@@ -606,7 +563,7 @@ section{
         }
     }
     .login_btn{
-        padding: 12px 45px;
+        padding: 12px 35px;
         background-color: $primary_color;
         border-radius: 25px;
         margin: 10px 0px;
@@ -749,8 +706,8 @@ section{
     }
     input{
         border: 1px solid #b8b8b8;
-        height: 50px;
-        padding: 15;
+        height: 30px;
+        padding: 5px;
     }
     .check{
         height: 15px;
@@ -763,7 +720,6 @@ section{
         font-size: 13px;
         color: #6b747b;
     }
-    
 }
 input.txt{
     width: 100%;

@@ -1,0 +1,29 @@
+/*keyframe da animação do carrosel*/
+@keyframes scroll{
+    0%{ right: 0px;}
+
+    15%{ right: 0px;}/*porcentagem anterior ao estouro para aumentar a velocidade do movimento*/
+    16%{ right: 205px;}
+    
+    31%{ right: 205px;}
+    32%{ right: 410px;}
+    
+    49%{ right: 410px;}
+    50%{ right: 615px;}
+    
+    65%{ right: 615px;}
+    66%{ right: 820px;}
+    
+    83%{ right: 820px;}
+    84%{ right: 1025px;}
+    
+    99%{ right: 1025px;}
+    100% { right: 1230px;}/*soma de todas as imagens mais o margin*/
+}
+/*keyframe da animação do botão de vídeo*/
+@keyframes pulse-border{
+    100%{ 
+        transform: scale(1.8);
+        background-color: transparent;
+    }
+}
