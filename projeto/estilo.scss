@@ -18,15 +18,6 @@
         transition-duration: 0.5s;
     }
 }
-
-/* 
-foto:
-largura:155
-margin:45
-container:
-largura:1000
-*/
-
 /*keyframe da animação do carrosel*/
 @keyframes scroll{
     0%{ right: 0px;}
@@ -223,12 +214,13 @@ div h1 p{
     display: inline;
 }
 div.header_container{
-    margin: 60px 15px 0px 15px;
+    margin: 60px auto 0px auto;
+    padding: 0px 20px;
     @include flex(column);
 
     img{
-    box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.432);
-    border-radius: 16px;
+    box-shadow: 6px 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
     margin-bottom: 40px;
     }
     p{
@@ -256,6 +248,7 @@ div.header_container > div{
         margin-left: 5px;
     }
 }
+
 @media (min-width:930px){
     body{
         border-top: 20px solid $primary_color;
@@ -266,18 +259,20 @@ div.header_container > div{
         max-width: 1250px;
         margin: 0px auto;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
 
         img{
             position: relative;
-            left: 105px;
-            width: 55%;
+            left: 40px;
+            width: 43%;
             transform: rotate(2deg);
+            margin: 0px;
         }
     }
     div.header_container > div{
-        max-width: 40%;
-        margin-left: 60px;
+        max-width: 43%;
+        margin-left: 50px;
+        margin-bottom: 0px;
         text-align: justify;
     }
     .menu{
@@ -356,7 +351,11 @@ div.header_container > div{
         }
     }
     .dropbox a::after{
-        top: 36.5%;
+        top: 23.8%;
+    }
+    .header_container{
+        max-width: 700px;
+        margin: auto;
     }
 }
 @media (max-width:480px){
@@ -381,7 +380,26 @@ div.header_container > div{
         }
     }
 }
+@media (min-width:1200px){
+    div.header_container{
+        max-width: 1250px;
+        margin: 0px auto;
+        flex-direction: row;
+        align-items: center;
 
+        img{
+            position: relative;
+            left: 105px;
+            width: 55%;
+            transform: rotate(2deg);
+        }
+    }
+    div.header_container > div{
+        max-width: 40%;
+        margin-left: 60px;
+        text-align: justify;
+    }
+}
 /******////////////////final do topo da página\\\\\\\\\\\\\\\********/
 
 section{
@@ -509,15 +527,22 @@ section{
     }
 }
 .links{
+    @include flex(row);
     margin-bottom: 0px;
+    color: $paragraph-color;
+    border-color: #b8b8b8;
+
+    .active{
+        color: $primary_color;
+        border-color: $primary_color; 
+    }
 }
 #frame1-btn, #frame2-btn, #frame3-btn{
     @include flex(row);
-    align-items: center;
-    border-bottom: 2px solid #b8b8b8;
+    align-items: flex-start;
+    border-bottom: 2px solid;
     box-sizing: border-box;
     padding: 0px 10px 5px 10px;
-    color: $paragraph-color;
     cursor: pointer;
     display: inline;
     font-size: 1.3em;
@@ -545,7 +570,8 @@ section{
 .flex{
     @include flex(column);
     justify-content: space-between;
-    margin: 0px 30px;
+    margin: 0px auto;
+    padding: 0px 20px;
 
     ul{
         padding: 0px;
@@ -571,7 +597,7 @@ section{
     }
     .text-float{
         margin: 0px;
-        max-width: 450px;
+        max-width: 500px;
         
         .form-submit{
             text-decoration: underline;
@@ -610,7 +636,7 @@ section{
 }
 .flex > .price{
     border: 2px solid #5c2be23d;
-    padding: 50px 40px 90px 40px;
+    padding: 50px 30px 90px 30px;
     max-width: 250px;
     border-radius: 6px;
     text-align: center;
@@ -711,7 +737,7 @@ section{
     border-radius: 6px;
     padding: 40px;
     @include flex(column);
-    margin: 0px 5px;
+    margin: 0px 25px;
 
     div{
         text-align: center;
@@ -761,6 +787,11 @@ form .login_btn{
     }
 }
 @media (min-width:930px){
+    section{
+        div{
+            max-width: 970px;
+        }
+    }
     section div.marketing_ctn{
         flex-direction: row;
         align-items: flex-start;
@@ -804,7 +835,7 @@ form .login_btn{
     .email_box{
         padding: 80px;
         margin: 0px auto;
-        width: 65%;
+        width: 70%;
     
         input.txt{
             width: 600px;
@@ -861,6 +892,13 @@ form .login_btn{
         }
     }
 }
+@media (max-width:930px) {
+    section{
+        div{
+            max-width: 700px;
+        }
+    }
+}
 @media (max-width:480px){
     .flex{
         padding: 0px 10px;
@@ -883,11 +921,21 @@ form .login_btn{
     #frame-btn1, #frame-btn2, #frame-btn3{
         margin-top: 45px;
     }
+    #frame1-btn, #frame2-btn, #frame3-btn{
+        margin-bottom: 10px;
+    }
     .links{
         font-size: 14px;
 
         span{
-            margin-bottom: 10px;
+            margin-bottom: 30px;
+        }
+    }
+}
+@media (min-width:1200px) {
+    section{
+        div{
+            max-width: 1100px;
         }
     }
 }
@@ -922,7 +970,7 @@ footer{
     }
 }
 footer div{
-    padding: 20px 80px;
+    padding: 20px 10px;
     @include flex(column);
     align-items: flex-start;
     background-color: $primary_color;
@@ -934,7 +982,9 @@ footer div{
 }
 @media (min-width:930px){
     footer > div{
-        padding: 30px 120px;
+        max-width: 85%;
+        margin: auto;
+        padding: 30px 0px;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
@@ -942,6 +992,7 @@ footer div{
         
         span{
             max-width: 320px;
+            margin: 0px 10px;
         }
     }
     footer span p{
@@ -956,7 +1007,7 @@ footer div{
     cursor: pointer;
 }
 /* The Modal (background) */
-.modal {
+.modal{
     display: none; /*mudar para display none*/
     position: fixed; /* Stay in place */
     z-index: 300; /* Sit on top */
@@ -974,6 +1025,7 @@ footer div{
     background-color: #fefefe;
     margin: 3% auto; 
     width: 80%;
+    min-width: 330px;
   }
   
   /* The Close Button */
@@ -998,16 +1050,46 @@ footer div{
   }
 .modalRegister{
     background-color: $lightgray;
-    float: clear;
 
-    div{
+    .register_container{
         @include flex(column);
-        align-items: center;
-        padding: 20px 0px 20px 20px;
+        align-items: flex-start;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 30px 30px 0px 30px;
+
+        div{
+            @include flex(row);
+            display: inline;
+            padding: 0px;
+
+            span{
+                float: left;
+                width: 275px;
+            }
+        }
+    }
+    .btn-container{
+        margin: 10px auto 20px auto;
+    }
+    /* Set the size of the div element that contains the map */
+    #map {
+        height: 400px;
+    /* The height is 400 pixels */
+        width: 100%;
+    /* The width is the width of the web page */
     }
     h2{
+        color: $title_color;
         font-size: 2em;
-        margin-bottom: 20px;
+        margin: auto;
+        text-align: center;
+    }
+    h3{
+        color: $title_color;
+        font-size: 1.3em;
+        margin: 0px;
+        padding: 20px 0px; 
     }
     label{
         font-size: 1.1em;
@@ -1016,12 +1098,12 @@ footer div{
         text-align: left;
     }
     input{
-        display: block;
         margin-bottom: 20px;
         width: 250px;
         height: 25px;
         border-radius: 2px;
         border: 2px solid #b8b8b8;
+        margin-right: 2px;
     }
     .submit{
         @include button (5px 10px, $secundary_color, $primary_color);
@@ -1032,7 +1114,7 @@ footer div{
         cursor: pointer;
         height: 50px;
         width: 200px;
-        margin-top: 10px;
+        margin: auto;
     }
 }
 
@@ -1043,7 +1125,7 @@ footer div{
     overflow: hidden;
 
     .modalContent{
-        width: 900px;
+        max-width: 900px;
         margin: 10% auto;
         background-color: transparent;
         border: 0;
@@ -1057,6 +1139,7 @@ footer div{
     overflow: scroll;
 
     .modalContent{
+        height: auto;
         max-width: 1150px;
         padding: 15px;
         position: relative;
@@ -1120,36 +1203,22 @@ footer div{
         border: 1px solid $primary_color;
         margin: 0px 5px;
         font-weight: 600;
+        cursor: pointer;
     }
     .lightbox-button2{
         @include button (14px 35px, $terciary_color, $secundary_color);
+        @extend .lightbox-button1;
         background-color: transparent;
         color: $terciary_color;
         border: 1px solid $terciary_color;
-        margin: 0px 5px;
-        font-weight: 600;
     }
 }
-
-@media (min-width: 930px){
-    .modalRegister{
-        @include flex(row);
-        align-items: flex-start;
-        position: relative;
-
-        div{
-            width: 50%;
-        }
-        .register_address{
-            padding: 20px 0px;
-            position: relative;
-            height: 100vh;
-            box-sizing: border-box;
-            padding: 30px;
-            background-color: $primary_color;
-
-        }
+@media (min-width:1200) {
+    .modalplay{
+        height: 510px;
     }
+}
+@media (min-width: 930px){
     #lightbox{
         .lightbox-container{
             flex-direction: row;
@@ -1170,5 +1239,17 @@ footer div{
             padding: 50px;
         }
     }
+    .modalplay{
+        height: 460px;
+    }
 }
-  
+@media (max-width:930px){
+    .modalplay{
+        height: 360px;
+    }
+}
+@media (max-width: 480px){
+    .modalplay{
+        height: 210px;
+    }
+}

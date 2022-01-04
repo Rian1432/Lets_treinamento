@@ -1,13 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 /*mixin para criação de botões*/
-/* 
-foto:
-largura:155
-margin:45
-container:
-largura:1000
-*/
 /*keyframe da animação do carrosel*/
 @-webkit-keyframes scroll {
   0% {
@@ -348,7 +341,8 @@ div h1 p {
 }
 
 div.header_container {
-  margin: 60px 15px 0px 15px;
+  margin: 60px auto 0px auto;
+  padding: 0px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -362,9 +356,9 @@ div.header_container {
 }
 
 div.header_container img {
-  -webkit-box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.432);
-          box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.432);
-  border-radius: 16px;
+  -webkit-box-shadow: 6px 5px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 6px 5px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
   margin-bottom: 40px;
 }
 
@@ -444,20 +438,22 @@ div.header_container > div {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   div.header_container img {
     position: relative;
-    left: 105px;
-    width: 55%;
+    left: 40px;
+    width: 43%;
     -webkit-transform: rotate(2deg);
             transform: rotate(2deg);
+    margin: 0px;
   }
   div.header_container > div {
-    max-width: 40%;
-    margin-left: 60px;
+    max-width: 43%;
+    margin-left: 50px;
+    margin-bottom: 0px;
     text-align: justify;
   }
   .menu {
@@ -547,7 +543,11 @@ div.header_container > div {
     margin-left: 15px;
   }
   .dropbox a::after {
-    top: 36.5%;
+    top: 23.8%;
+  }
+  .header_container {
+    max-width: 700px;
+    margin: auto;
   }
 }
 
@@ -575,6 +575,32 @@ div.header_container > div {
   }
   .carusel img {
     margin-right: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  div.header_container {
+    max-width: 1250px;
+    margin: 0px auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.header_container img {
+    position: relative;
+    left: 105px;
+    width: 55%;
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  div.header_container > div {
+    max-width: 40%;
+    margin-left: 60px;
+    text-align: justify;
   }
 }
 
@@ -731,7 +757,24 @@ section div.marketing_ctn p {
 }
 
 .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 0px;
+  color: #6b747b;
+  border-color: #b8b8b8;
+}
+
+.links .active {
+  color: #5f4dee;
+  border-color: #5f4dee;
 }
 
 #frame1-btn, #frame2-btn, #frame3-btn {
@@ -745,12 +788,13 @@ section div.marketing_ctn p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  align-items: center;
-  border-bottom: 2px solid #b8b8b8;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 2px solid;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0px 10px 5px 10px;
-  color: #6b747b;
   cursor: pointer;
   display: inline;
   font-size: 1.3em;
@@ -793,7 +837,8 @@ section div.marketing_ctn p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0px 30px;
+  margin: 0px auto;
+  padding: 0px 20px;
 }
 
 .flex ul {
@@ -824,7 +869,7 @@ section div.marketing_ctn p {
 
 .flex .text-float {
   margin: 0px;
-  max-width: 450px;
+  max-width: 500px;
 }
 
 .flex .text-float .form-submit {
@@ -869,7 +914,7 @@ section div.marketing_ctn p {
 
 .flex > .price {
   border: 2px solid #5c2be23d;
-  padding: 50px 40px 90px 40px;
+  padding: 50px 30px 90px 30px;
   max-width: 250px;
   border-radius: 6px;
   text-align: center;
@@ -1016,7 +1061,7 @@ section div.marketing_ctn p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0px 5px;
+  margin: 0px 25px;
 }
 
 .email_box div {
@@ -1085,6 +1130,9 @@ form .login_btn:hover {
 }
 
 @media (min-width: 930px) {
+  section div {
+    max-width: 970px;
+  }
   section div.marketing_ctn {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1135,7 +1183,7 @@ form .login_btn:hover {
   .email_box {
     padding: 80px;
     margin: 0px auto;
-    width: 65%;
+    width: 70%;
   }
   .email_box input.txt {
     width: 600px;
@@ -1192,6 +1240,12 @@ form .login_btn:hover {
           transition-duration: 0.5s;
 }
 
+@media (max-width: 930px) {
+  section div {
+    max-width: 700px;
+  }
+}
+
 @media (max-width: 480px) {
   .flex {
     padding: 0px 10px;
@@ -1213,11 +1267,20 @@ form .login_btn:hover {
   #frame-btn1, #frame-btn2, #frame-btn3 {
     margin-top: 45px;
   }
+  #frame1-btn, #frame2-btn, #frame3-btn {
+    margin-bottom: 10px;
+  }
   .links {
     font-size: 14px;
   }
   .links span {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  section div {
+    max-width: 1100px;
   }
 }
 
@@ -1256,7 +1319,7 @@ footer a {
 }
 
 footer div {
-  padding: 20px 80px;
+  padding: 20px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1281,7 +1344,9 @@ footer div {
 
 @media (min-width: 930px) {
   footer > div {
-    padding: 30px 120px;
+    max-width: 85%;
+    margin: auto;
+    padding: 30px 0px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1296,6 +1361,7 @@ footer div {
   }
   footer > div span {
     max-width: 320px;
+    margin: 0px 10px;
   }
   footer span p {
     margin-bottom: 0px;
@@ -1337,6 +1403,7 @@ footer div {
   background-color: #fefefe;
   margin: 3% auto;
   width: 80%;
+  min-width: 330px;
 }
 
 /* The Close Button */
@@ -1363,10 +1430,10 @@ footer div {
 
 .modalRegister {
   background-color: #f4f9ff;
-  float: clear;
+  /* Set the size of the div element that contains the map */
 }
 
-.modalRegister div {
+.modalRegister .register_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1377,13 +1444,58 @@ footer div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  align-items: center;
-  padding: 20px 0px 20px 20px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 30px 30px 0px 30px;
+}
+
+.modalRegister .register_container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: inline;
+  padding: 0px;
+}
+
+.modalRegister .register_container div span {
+  float: left;
+  width: 275px;
+}
+
+.modalRegister .btn-container {
+  margin: 10px auto 20px auto;
+}
+
+.modalRegister #map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
 }
 
 .modalRegister h2 {
+  color: #2f363b;
   font-size: 2em;
-  margin-bottom: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+.modalRegister h3 {
+  color: #2f363b;
+  font-size: 1.3em;
+  margin: 0px;
+  padding: 20px 0px;
 }
 
 .modalRegister label {
@@ -1394,12 +1506,12 @@ footer div {
 }
 
 .modalRegister input {
-  display: block;
   margin-bottom: 20px;
   width: 250px;
   height: 25px;
   border-radius: 2px;
   border: 2px solid #b8b8b8;
+  margin-right: 2px;
 }
 
 .modalRegister .submit {
@@ -1413,7 +1525,7 @@ footer div {
   cursor: pointer;
   height: 50px;
   width: 200px;
-  margin-top: 10px;
+  margin: auto;
 }
 
 .modalRegister .submit:hover {
@@ -1431,7 +1543,7 @@ footer div {
 }
 
 #modalVideo .modalContent {
-  width: 900px;
+  max-width: 900px;
   margin: 10% auto;
   background-color: transparent;
   border: 0;
@@ -1443,6 +1555,7 @@ footer div {
 }
 
 #lightbox .modalContent {
+  height: auto;
   max-width: 1150px;
   padding: 15px;
   position: relative;
@@ -1516,7 +1629,7 @@ footer div {
   margin-right: 5px;
 }
 
-#lightbox .lightbox-button1 {
+#lightbox .lightbox-button1, #lightbox .lightbox-button2 {
   padding: 14px 35px;
   border: 1px solid #f0ffff;
   border-radius: 25px;
@@ -1525,9 +1638,10 @@ footer div {
   border: 1px solid #5f4dee;
   margin: 0px 5px;
   font-weight: 600;
+  cursor: pointer;
 }
 
-#lightbox .lightbox-button1:hover {
+#lightbox .lightbox-button1:hover, #lightbox .lightbox-button2:hover {
   background-color: #f0ffff;
   color: #5f4dee;
   -webkit-transition-property: background-color, color;
@@ -1543,8 +1657,6 @@ footer div {
   background-color: transparent;
   color: #494949;
   border: 1px solid #494949;
-  margin: 0px 5px;
-  font-weight: 600;
 }
 
 #lightbox .lightbox-button2:hover {
@@ -1556,35 +1668,13 @@ footer div {
           transition-duration: 0.5s;
 }
 
+@media (min-width: 1200) {
+  .modalplay {
+    height: 510px;
+  }
+}
+
 @media (min-width: 930px) {
-  .modalRegister {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    position: relative;
-  }
-  .modalRegister div {
-    width: 50%;
-  }
-  .modalRegister .register_address {
-    padding: 20px 0px;
-    position: relative;
-    height: 100vh;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 30px;
-    background-color: #5f4dee;
-  }
   #lightbox .lightbox-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1607,6 +1697,21 @@ footer div {
   }
   #lightbox .modalContent {
     padding: 50px;
+  }
+  .modalplay {
+    height: 460px;
+  }
+}
+
+@media (max-width: 930px) {
+  .modalplay {
+    height: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalplay {
+    height: 210px;
   }
 }
 /*# sourceMappingURL=estilo.css.map */

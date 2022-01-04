@@ -13,6 +13,7 @@ var body = document.querySelector("body");
 btn.onclick = function() {
   modal.style.display = "block";
   body.style.overflow = "hidden";
+  document.getElementById('name').focus();
 }
 
 // clicar no (X) para fechar

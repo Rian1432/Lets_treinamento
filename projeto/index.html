@@ -54,62 +54,68 @@
     <div id="myModal" class="modal">
         <!--conteúdo do modal-->
         <div class="modalContent">
+            <span class="close">&times;</span>
             <div class="modalRegister">
-                <span class="close">&times;</span>
                 <div class="register_container">
                     <h2>Registre-se</h2>
-                    <span>
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" placeholder="Digite seu nome" 
-                        required >
-                    </span>
-                    <span>
-                        <label for="email">E-mail:</label>
-                        <input type="text" id="email" placeholder="ex: ...@gmail.com" required >
-                    </span>
-                    <span>
-                        <label for="phone">Telefone:</label>
-                        <input id="phone" onkeyup="phoneMask(event)" placeholder="ex: (00) 00000-0000" maxlength="15" required>
-                    </span>
-                    <span>
-                        <label for="cep">CEP:</label>
-                        <input type="text" id="cep" onkeypress="mask(this, '#####-###')" maxlength="9" placeholder="ex: 00000-000"  required>
-                    </span>
-                    
-                    <span>
-                        <label for="rua">Rua:</label>
-                        <input type="text" id="rua" placeholder="Digite o nome da sua rua" required>
-                    </span>
-                    
-                    <span>
-                        <label for="bairro">Bairro:</label>
-                        <input type="text" id="bairro" placeholder="Digite o nome do seu bairro" required>
-                    </span>
-                    
-                    <span>
-                        <label for="cidade">Cidade:</label>
-                        <input type="text" id="cidade" placeholder="Digite o nome da sua cidade" required>
-                    </span>
-                    
-                    <span>
-                        <label for="estado">Estado:</label>
-                        <input type="text" id="estado" placeholder="Digite o nome do seu estado" required>
-                    </span>
-                    
-                    <span>
-                        <label for="numero">Número:</label>
-                        <input type="text" id="numero" placeholder="Digite o número da sua residência" maxlength="6" required>
-                    </span>
-                    
-                    <span>
-                        <label for="complemento">Complemento:</label>
-                        <input type="text" id="complemento" placeholder="ex: apartamento, casa, etc...">
-                    </span>
-                    
-                    <input type="submit" value="Enviar" class="submit">
-                </div>
-                <div class="register_address">
-                    
+                    <h3>Dados pessoais:</h3>
+                    <div>
+                        <span>
+                            <label for="name">Nome:</label>
+                            <input type="text" id="name" placeholder="Digite seu nome"
+                            required >
+                        </span>
+                        <span>
+                            <label for="email">E-mail:</label>
+                            <input type="text" id="email" placeholder="ex: ...@gmail.com" required >
+                        </span>
+                        <span>
+                            <label for="phone">Telefone:</label>
+                            <input id="phone" onkeyup="phoneMask(event)" placeholder="ex: (00) 00000-0000" maxlength="15" required>
+                        </span>
+                    </div>
+                    <h3>Localização:</h3>
+                    <div>
+                        <span>
+                            <label for="cep">CEP:</label>
+                            <input type="text" id="cep" onkeypress="mask(this, '#####-###')" maxlength="9" placeholder="ex: 00000-000"  required>
+                        </span>
+                        
+                        <span>
+                            <label for="rua">Rua:</label>
+                            <input type="text" id="rua" placeholder="Digite o nome da sua rua" required>
+                        </span>
+                        
+                        <span>
+                            <label for="bairro">Bairro:</label>
+                            <input type="text" id="bairro" placeholder="Digite o nome do seu bairro" required>
+                        </span>
+                    <!--</div>
+                    <div>-->
+                        <span>
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="cidade" placeholder="Digite o nome da sua cidade" required>
+                        </span>
+                        
+                        <span>
+                            <label for="estado">Estado:</label>
+                            <input type="text" id="estado" placeholder="Digite o nome do seu estado" required>
+                        </span>
+                        
+                        <span>
+                            <label for="numero">Número:</label>
+                            <input type="text" id="numero" placeholder="Digite o número da sua residência" maxlength="6" required>
+                        </span>
+                        <span>
+                            <label for="complemento">Complemento:</label>
+                            <input type="text" id="complemento" placeholder="ex: apartamento, casa, etc...">
+                            </span>
+                        </div>
+                        <div id="map"></div>
+                        <div class="btn-container">
+                            <input type="submit" value="Enviar" class="submit">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,20 +188,44 @@
             <div>    
                 <h2>Automação de Marketing</h2>
                 <p class="text-ctn">Leve sua estratégia de negócios para o próximo nível e automatize suas tarefas de marketing para economizar tempo no desenvolvimento de produtos. Tivo pode fornecer resultados em menos de 2 semanas</p>
-                <nav class="links">
-                    <span id="frame1-btn"> 
+                <nav class="links" id="links">
+                    <span class="link-btn active" id="frame1-btn"> 
                         <i class="fas fa-list"></i>
                         <p>Construtor de listas</p>
                     </span>
-                    <span id="frame2-btn">
+                    <span class="link-btn" id="frame2-btn">
                         <i class="fas fa-envelope-open-text"></i>
                         <p>Campanhas</p>
                     </span>
-                    <span id="frame3-btn">
+                    <span class="link-btn" id="frame3-btn">
                         <i class="fas fa-chart-bar"></i>
                         <p>Analytics</p>
                     </span>
                 </nav>
+<!--script para marcação de -->
+<script>
+    // Get the container element
+    var btnContainer = document.getElementById("links");
+
+    // Get all buttons with class="btn" inside the container
+    var btns = btnContainer.getElementsByClassName("link-btn");
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+
+        var element = document.getElementById("frame1-btn");
+        element.classList.remove("active");
+        // If there's no active class
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+
+        this.className += " active";
+    });
+    }
+</script>
 
 <!----------mexendo abaixo 29/12---------->
 
@@ -249,7 +279,7 @@
         <div id="lightbox">
             <!--conteúdo do modal-->
             <div class="modalContent">
-                <div class="modalplay">
+                <div class="modalLightbox">
                     <div class="lightbox-container">
                         <div class="close-lightbox">&times;</div>
                                 <img src="https://inovatik.com/tivo/images/details-lightbox.jpg" alt="lightbox-image">
@@ -299,11 +329,11 @@
                 <div class="modalContent">
                     <div class="modalplay">
                         <span class="closeVideo">&times;</span>
-                        <iframe width="900" height="506" src="https://www.youtube.com/embed/fLCjQJCekTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/fLCjQJCekTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
+
         <section class="container_gray">
             <div class="play-video" id="play-video">
                 <img class="image_ctn" src="https://inovatik.com/tivo/images/video-preview.svg" alt="site_construction">
@@ -473,7 +503,11 @@
             </span>
         </div>
     </footer>
-
+    <script 
+        async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjEC36pyeJc0C0kB5V2CBY08kiAv7GayA&callback=initMap">
+    </script>
+    <script src="JS/googleMap.js"></script>
     <script src="JS/autoMarketing.js"></script>
     <script src="JS/viacep.js"></script>
     <script src="JS/cepMask.js"></script>
