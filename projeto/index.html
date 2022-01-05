@@ -30,14 +30,14 @@
                 <a href="#pricing">Preços</a>
                 <div class="dropbox">
                     <a>Drop</a>
-                    <div class="dropbox_content">
+                    <div class="dropbox-content">
                         <ul>
                             <li><a href="#">Inscrever-se</a></li>
                             <hr>
                             <li><a href="#">Conecte-se</a></li>
                             <hr>
                             <!------------botão de modal----------->
-                            <li><button id="modal_btn">Cadastro</button></li>
+                            <li><button id="modal-btn">Cadastro</button></li>
                             <hr>
                             <li><a href="#">Detalhes do artigo</a></li>
                             <hr>
@@ -47,7 +47,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="#" class="login_btn">Entrar</a>
+                <a href="#" class="login-btn">Entrar</a>
             </nav>
         </div>
     </header>
@@ -57,7 +57,7 @@
         <div class="modalContent">
             <span class="close">&times;</span>
             <div class="modalRegister">
-                <div class="register_container">
+                <div class="register-container">
                     <h2>Registre-se</h2>
                     <h3>Dados pessoais:</h3>
                     <div>
@@ -121,14 +121,14 @@
             </div>
         </div>
     </div>
-    <div class="content_top">     
-        <div class="header_container">
-            <div class="header_content">
+    <div class="content-top">     
+        <div class="header-container">
+            <div class="header-content">
                 <h1>Modelo de HTML da Web de aplicativo SaaS</h1>
                 <p>Use o Tivo para automatizar suas ações de marketing a fim de atingir um público muito maior em sua área de trabalho</p>
                 <div class="btns">
-                    <a class="container_btn" href="#">Descobrir</a>
-                    <a class="container_btn2" href="#">Inscrever-se</a>
+                    <a class="container-btn" href="#">Descobrir</a>
+                    <a class="container-btn2" href="#">Inscrever-se</a>
                 </div>
             </div>
             <img src="images/header.svg" alt="site_image">
@@ -142,7 +142,7 @@
 
     <main>
         <section>
-            <div class="container_carousel">
+            <div class="container-carousel">
                 <div class="carousel">
                     <img src="https://inovatik.com/tivo/images/customer-logo-1.png" alt="logo">
                     <img src="https://inovatik.com/tivo/images/customer-logo-2.png" alt="logo">
@@ -157,10 +157,10 @@
                     <img src="https://inovatik.com/tivo/images/customer-logo-5.png" alt="logo">
                 </div>
             </div>
-            <div>
+            <div class="functions">
                 <p class="description">Descrição</p>
                 <h2>A automação de marketing trará muito mais leads qualificados</h2>
-                <div class="marketing_ctn">
+                <div class="marketing-ctn">
                     <span>
                         <img src="images/description-icon-1.svg" alt="construtor_image">
                         <h3>Construtor de listas</h3>
@@ -184,25 +184,27 @@
 <!------final da primeira parte------->
 
 
-        <section class="container_gray" id="features">
+        <section class="container-gray" id="features">
             <p class="description">Recursos</p>
             <div>    
-                <h2>Automação de Marketing</h2>
-                <p class="text-ctn">Leve sua estratégia de negócios para o próximo nível e automatize suas tarefas de marketing para economizar tempo no desenvolvimento de produtos. Tivo pode fornecer resultados em menos de 2 semanas</p>
-                <nav class="links" id="links">
-                    <span class="link-btn active" id="frame1-btn"> 
-                        <i class="fas fa-list"></i>
-                        <p>Construtor de listas</p>
-                    </span>
-                    <span class="link-btn" id="frame2-btn">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <p>Campanhas</p>
-                    </span>
-                    <span class="link-btn" id="frame3-btn">
-                        <i class="fas fa-chart-bar"></i>
-                        <p>Analytics</p>
-                    </span>
-                </nav>
+                <div class="automation-container">
+                    <h2>Automação de Marketing</h2>
+                    <p class="text-ctn">Leve sua estratégia de negócios para o próximo nível e automatize suas tarefas de marketing para economizar tempo no desenvolvimento de produtos. Tivo pode fornecer resultados em menos de 2 semanas</p>
+                    <nav class="links" id="links">
+                        <span class="link-btn active" id="frame1-btn">
+                            <i class="fas fa-list"></i>
+                            <p>Construtor de listas</p>
+                        </span>
+                        <span class="link-btn" id="frame2-btn">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <p>Campanhas</p>
+                        </span>
+                        <span class="link-btn" id="frame3-btn">
+                            <i class="fas fa-chart-bar"></i>
+                            <p>Analytics</p>
+                        </span>
+                    </nav>
+                </div>
 <!--script para marcação de -->
 <script>
     // Get the container element
@@ -232,7 +234,7 @@
 
 <!--------**************primeira tela (automação de marketing)*************-------->
                 <div class="flex" id="frame1">
-                    <img class="features_img" src="images/feature-app-1.svg" alt="List_building_image">
+                    <img class="features-frame" src="images/feature-app-1.svg" alt="List_building_image">
                     <div class="text-float">
                         <h3>O edifício da lista é mais fácil do que nunca</h3>
                         <p>É muito fácil começar a usar o Tivo. Basta preencher e enviar o <a class="form-submit" href="#">Formulário de Inscrição</a> e você terá acesso ao aplicativo e a todos os seus recursos em no máximo 24h. Use tutoriais para aprender mais rápido</p>
@@ -241,12 +243,12 @@
                             <li>Gerenciar formulários e páginas de destino para seus serviços online</li>
                             <li>Adicione e remova qualquer assinante usando o painel de controle</li>
                         </ul>
-                        <a class="login_btn" href="#">Sing in</a>
+                        <a class="login-btn" href="#">Sing in</a>
                     </div>
                 </div>
 <!--------**************segunda tela (automação de marketing)*************-------->
                 <div class="flex" id="frame2">
-                    <img class="features_img" src="images/feature-app-2.svg" alt="List_building_image">
+                    <img class="features-frame" src="images/feature-app-2.svg" alt="List_building_image">
                     <div class="text-float">
                         <h3>Ferramentas de monitoramento de campanha</h3>
                         <p>O monitoramento de campanhas é um recurso que desenvolvemos desde o início porque está no cerne do Tivo e basicamente para qualquer atividade de marketing com foco em resultados.</p>
@@ -255,12 +257,12 @@
                             <li>Gerenciar formulários e páginas de destino para seus serviços online</li>
                             <li>Adicione e remova qualquer assinante usando o painel de controle</li>
                         </ul>
-                        <a class="login_btn">Sing in</a>
+                        <a class="login-btn">Sing in</a>
                     </div>
                 </div>
 <!--------**************terceira tela (automação de marketing)*************-------->
                 <div class="flex" id="frame3">
-                    <img class="features_img" src="images/feature-app-3.svg" alt="List_building_image">
+                    <img class="features-frame" src="images/feature-app-3.svg" alt="List_building_image">
                     <div class="text-float">
                         <h3>Painel de controle analítico</h3>
                         <p>O painel de controle analítico é importante para cada equipe de marketing, portanto, é implementado desde o início e projetado para produzir relatórios com base em muito poucas informações de entrada.</p>
@@ -269,7 +271,7 @@
                             <li>Gerenciar formulários e páginas de destino para seus serviços online</li>
                             <li>Adicione e remova qualquer assinante usando o painel de controle</li>
                         </ul>
-                        <a class="login_btn" href="#">Sing in</a>
+                        <a class="login-btn" href="#">Sing in</a>
                     </div>
                 </div>
             </div>
@@ -318,9 +320,9 @@
                         <li>Entenda os clientes e atenda aos seus requisitos</li>
                         <li>Base de clientes direcionada com a tecnologia eficiente da Tivo</li>
                     </ul>
-                    <button class="login_btn" id="lightbox-btn">Lightbox</button>
+                    <button class="login-btn" id="lightbox-btn">Lightbox</button>
                 </span>
-                <img class="features_img" src="images/details.svg" alt="List_building_image">
+                <img class="features-img" src="images/details.svg" alt="List_building_image">
             </div>
         </section>
 
@@ -335,14 +337,16 @@
                 </div>
             </div>
 
-        <section class="container_gray">
-            <div class="play-video" id="play-video">
-                <img class="image_ctn" src="images/video-preview.svg" alt="site_construction">
-                <span class="play-button">
-                    <span></span>
-                </span>
-            </div>   
-                <p class="text-ctn">Qual a melhor maneira de mostrar o aplicativo saas de automação de marketing do Tivo do que apresentar em um vídeo algumas situações ótimas de cada módulo e ferramenta disponível para os usuários</p>
+        <section class="container-gray">
+            <div class="container-video">
+                <div class="play-video" id="play-video">
+                    <img class="image_ctn" src="images/video-preview.svg" alt="site_construction">
+                    <span class="play-button">
+                        <span></span>
+                    </span>
+                </div>
+                    <p class="text-ctn">Qual a melhor maneira de mostrar o aplicativo saas de automação de marketing do Tivo do que apresentar em um vídeo algumas situações ótimas de cada módulo e ferramenta disponível para os usuários</p>
+            </div>
         </section>
         <section id="pricing">
             <p class="description">Preços</p>
@@ -359,7 +363,7 @@
                         <li><i class="fas fa-times"></i> Edifício e limpeza da lista</li>
                         <li><i class="fas fa-times"></i> Coletar e relatar dados</li>
                     </ul>
-                    <a class="login_btn" href="#">Inscrever-se</a>
+                    <a class="login-btn" href="#">Inscrever-se</a>
                 </span>
                 <span class="price">
                     <h3>AVANÇADO</h3>
@@ -375,7 +379,7 @@
                         <li><i class="fas fa-times"></i> Edifício e limpeza da lista</li>
                         <li><i class="fas fa-times"></i> Coletar e relatar dados</li>
                     </ul>
-                    <a class="login_btn" href="#">Inscrever-se</a>
+                    <a class="login-btn" href="#">Inscrever-se</a>
                 </span>
                 <span class="price">
                     <h3>COMPLETO</h3>
@@ -391,7 +395,7 @@
                         <li><i class="fas fa-check"></i> Edifício e limpeza da lista</li>
                         <li><i class="fas fa-check"></i> Coletar e relatar dados</li>
                     </ul>
-                    <a class="login_btn" href="#">Inscrever-se</a>
+                    <a class="login-btn" href="#">Inscrever-se</a>
                 </span>
                 
             </div>
@@ -439,7 +443,7 @@
                     <div class="swiper-button-next" style="color: #494949b9; right: 0px;" ></div>
                 </aside>
             </div>
-            <form class="email_box">
+            <form class="email-box">
                 <div>
                     <p class="description">BOLETIM DE NOTÍCIAS</p>
                     <h2>Fique atualizado com as últimas notícias para obter mais pistas</h2>
@@ -447,7 +451,7 @@
                         <input class="txt" type="email" size="" placeholder="Digite seu e-mail">
                         <label for="terms"><input class="check" type="checkbox" name="terms" id="">Eu concordo com a Política de Privacidade e os Termos e Condições do template</label>
                     </div>
-                    <button class="login_btn" type="submit" href="#">increver-se</button>
+                    <button class="login-btn" type="submit" href="#">increver-se</button>
                 </div>
             </form>
             </div>
