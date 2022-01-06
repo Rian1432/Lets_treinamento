@@ -422,7 +422,6 @@ section{
         margin-bottom: 10px;
         cursor: pointer;
         display: inline;
-        font-size: 1.3em;
     
         &:hover{
             color: $primary_color;
@@ -586,10 +585,11 @@ section{
 .flex > .price{
     border: 2px solid #5c2be23d;
     padding: 50px 30px;
-    max-width: 250px;
+    box-sizing: border-box;
+    max-width: 280px;
     border-radius: 6px;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 0px 5px 30px 5px;
 
     h3{
         color: $primary_color;
@@ -634,6 +634,7 @@ section{
         i{
             font-size: 13px;
             color: #2b44ff;
+            margin-right: 5px;
         }
         .fa-times{
             color: $paragraph-color;
@@ -773,6 +774,9 @@ form .login-btn{
             max-width: 970px;
         }
     }
+    #frame1-btn, #frame2-btn, #frame3-btn{
+        font-size: 1.3em;
+    }  
     section div.marketing-ctn{
         flex-direction: row;
         align-items: flex-start;
@@ -804,15 +808,17 @@ form .login-btn{
         flex-direction: row;
         align-items: flex-start;
     
-        .span{
+        &:nth-child(1) > span:nth-child(1) {
+            padding-right: 20px;
+            box-sizing: border-box;
             max-width: 500px;
-            margin-bottom: 40px;
-            margin-right: 20px;
         }
         .text-float{
             max-width: 500px;
+            padding-left: 20px;
+            box-sizing: border-box;
             float: right;
-            margin-left: 20px;
+            
         }
         .price{
             margin-bottom: 0px;
@@ -824,7 +830,6 @@ form .login-btn{
     .email-box{
         padding: 80px;
         margin: 0px auto;
-        width: 70%;
     
         input.txt{
             width: 600px;
@@ -861,6 +866,9 @@ form .login-btn{
             max-width: 700px;
         }
     }
+    #frame1-btn, #frame2-btn, #frame3-btn{
+        font-size: 1.3em;
+    }  
 }
 @media (max-width:480px){
     .marketing-ctn{
@@ -893,6 +901,7 @@ form .login-btn{
     #personal img{
         width: 100px;
         margin: 0px;
+        margin-bottom: 10px;
     }
     .links{
         flex-direction: column;
@@ -903,8 +912,20 @@ form .login-btn{
             margin-bottom: 10px;
         }
     }
+    #frame1-btn, #frame2-btn, #frame3-btn{
+        font-size: 1em;
+    }   
     blockquote{
         font-size: $paragraph-sm;
+    }
+    .swiper-button-next::after{
+        padding-right: 10px;
+        font-size: 30px;
+    }
+    
+    .swiper-button-prev::after{
+        padding-left: 10px;
+        font-size: 30px;
     }
 }
 @media (min-width:1200px) {
@@ -918,7 +939,7 @@ form .login-btn{
 /******///////////////////final do contúedo principal\\\\\\\\\\\\\\\\\\\*******/
 
 footer{
-    color: #ebebeb;
+    color: #ffffff;
     padding: 0px;
     background-color: $primary_color;
     font-size: 14px;

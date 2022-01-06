@@ -701,7 +701,6 @@ section div.marketing-ctn p {
   margin-bottom: 10px;
   cursor: pointer;
   display: inline;
-  font-size: 1.3em;
 }
 
 .container-gray #frame1-btn:hover, .container-gray #frame2-btn:hover, .container-gray #frame3-btn:hover {
@@ -903,10 +902,12 @@ section div.marketing-ctn p {
 .flex > .price {
   border: 2px solid #5c2be23d;
   padding: 50px 30px;
-  max-width: 250px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 280px;
   border-radius: 6px;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 0px 5px 30px 5px;
 }
 
 .flex > .price h3 {
@@ -971,6 +972,7 @@ section div.marketing-ctn p {
 .flex > .price li i {
   font-size: 13px;
   color: #2b44ff;
+  margin-right: 5px;
 }
 
 .flex > .price li .fa-times {
@@ -1155,6 +1157,9 @@ form .login-btn:hover {
   section div {
     max-width: 970px;
   }
+  #frame1-btn, #frame2-btn, #frame3-btn {
+    font-size: 1.3em;
+  }
   section div.marketing-ctn {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1193,15 +1198,18 @@ form .login-btn:hover {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .flex .span {
+  .flex:nth-child(1) > span:nth-child(1) {
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     max-width: 500px;
-    margin-bottom: 40px;
-    margin-right: 20px;
   }
   .flex .text-float {
     max-width: 500px;
+    padding-left: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     float: right;
-    margin-left: 20px;
   }
   .flex .price {
     margin-bottom: 0px;
@@ -1212,7 +1220,6 @@ form .login-btn:hover {
   .email-box {
     padding: 80px;
     margin: 0px auto;
-    width: 70%;
   }
   .email-box input.txt {
     width: 600px;
@@ -1246,6 +1253,9 @@ form .login-btn:hover {
   section div {
     max-width: 700px;
   }
+  #frame1-btn, #frame2-btn, #frame3-btn {
+    font-size: 1.3em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1274,6 +1284,7 @@ form .login-btn:hover {
   #personal img {
     width: 100px;
     margin: 0px;
+    margin-bottom: 10px;
   }
   .links {
     -webkit-box-orient: vertical;
@@ -1286,8 +1297,19 @@ form .login-btn:hover {
     margin-bottom: 30px;
     margin-bottom: 10px;
   }
+  #frame1-btn, #frame2-btn, #frame3-btn {
+    font-size: 1em;
+  }
   blockquote {
     font-size: 14px;
+  }
+  .swiper-button-next::after {
+    padding-right: 10px;
+    font-size: 30px;
+  }
+  .swiper-button-prev::after {
+    padding-left: 10px;
+    font-size: 30px;
   }
 }
 
@@ -1299,7 +1321,7 @@ form .login-btn:hover {
 
 /******/
 footer {
-  color: #ebebeb;
+  color: #ffffff;
   padding: 0px;
   background-color: #5f4dee;
   font-size: 14px;
