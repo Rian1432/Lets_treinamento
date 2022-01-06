@@ -176,7 +176,7 @@ svg.header-decoration {
   max-width: 585px;
   overflow-y: auto;
   overflow-x: scroll;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .carousel {
@@ -261,10 +261,9 @@ svg.header-decoration {
 
 .dropbox > a::after {
   content: '';
-  position: absolute;
-  width: 0;
-  top: 47%;
-  margin-left: 2px;
+  position: relative;
+  top: 12px;
+  left: 2px;
   border-top: 5px solid white;
   border-bottom: 3px solid transparent;
   border-left: 3px solid transparent;
@@ -365,6 +364,8 @@ div.header-container > div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .btns a.container-btn {
@@ -518,9 +519,6 @@ div.header-container > div {
   .dropbox-content #modal-btn {
     margin-left: 15px;
   }
-  .dropbox a::after {
-    top: 23.8%;
-  }
   .header-container {
     max-width: 700px;
     margin: auto;
@@ -528,8 +526,14 @@ div.header-container > div {
 }
 
 @media (max-width: 480px) {
+  p {
+    font-size: 14px;
+  }
+  li {
+    font-size: 14px;
+  }
   header {
-    padding: 15px 10px;
+    padding: 10px;
   }
   div.header-container > div {
     margin: 0px 1% 40px 1%;
@@ -638,7 +642,6 @@ section div.marketing-ctn img {
 section div.marketing-ctn p {
   max-width: 600px;
   color: #6b747b;
-  font-size: 1em;
 }
 
 .container-gray {
@@ -646,40 +649,105 @@ section div.marketing-ctn p {
   padding: 80px 0px;
 }
 
-.container-gray nav {
-  margin: 40px 0px 0px 0px;
-  display: block;
-  text-align: center;
+.container-gray .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #6b747b;
+  border-color: #b8b8b8;
+  margin: 40px 0px 20px 0px;
+  overflow-x: hidden;
 }
 
-.container-gray nav a {
-  color: #b8b8b8;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #b8b8b8;
-  margin: -2px;
+.container-gray .links .active {
+  color: #5f4dee;
+  border-color: #5f4dee;
 }
 
-.container-gray .container-video {
+.container-gray .links p {
+  display: inline;
+  font-size: 1em;
+}
+
+.container-gray #frame1-btn, .container-gray #frame2-btn, .container-gray #frame3-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: center;
+  border-bottom: 2px solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px 10px 5px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: inline;
+  font-size: 1.3em;
+}
+
+.container-gray #frame1-btn:hover, .container-gray #frame2-btn:hover, .container-gray #frame3-btn:hover {
+  color: #5f4dee;
+  border-color: #5f4dee;
+}
+
+.container-gray #frame1-btn p, .container-gray #frame2-btn p, .container-gray #frame3-btn p {
+  display: inline;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.container-gray .button-active {
+  color: #5f4dee;
+}
+
+.container-gray #frame2 {
+  display: none;
+}
+
+.container-gray #frame3 {
+  display: none;
+}
+
+.container-video {
   padding: 0px 20px;
 }
 
-.container-gray .image-ctn {
+.image-ctn {
   width: 100%;
   margin: 0px;
 }
 
-.container-gray .play-video {
+.play-video {
   position: relative;
   cursor: pointer;
 }
 
-.container-gray .play-video a {
+.play-video a {
   padding: 0;
 }
 
-.container-gray .play-button {
+.play-button {
   position: absolute;
-  left: 50%;
+  left: 48%;
   top: 43%;
   display: block;
   width: 40px;
@@ -687,25 +755,25 @@ section div.marketing-ctn p {
   z-index: 10;
 }
 
-.container-gray .play-button::after {
+.play-button::after {
   content: "";
   position: absolute;
   display: block;
-  top: 40%;
-  right: 50%;
+  top: -43%;
+  right: -4%;
   border-radius: 50%;
   width: 70px;
   height: 70px;
   background-color: #5f4dee;
 }
 
-.container-gray .play-button::before {
+.play-button::before {
   content: "";
   position: absolute;
   display: block;
   z-index: 3;
-  right: 50%;
-  top: 40%;
+  top: -43%;
+  right: -4%;
   border-radius: 50%;
   width: 70px;
   height: 70px;
@@ -722,91 +790,22 @@ section div.marketing-ctn p {
           animation-delay: 0s;
 }
 
-.container-gray .play-button span {
+.play-button span {
   position: relative;
   display: block;
   z-index: 10;
   width: 0;
-  right: 22px;
-  top: 34px;
   background-color: transparent;
   border-left: 20px solid #fff;
   border-top: 16px solid transparent;
   border-bottom: 16px solid transparent;
 }
 
-.container-gray .text-ctn {
+.text-ctn {
   color: #6b747b;
   margin: 20px auto;
   max-width: 650px;
   text-align: center;
-}
-
-.links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 0px;
-  color: #6b747b;
-  border-color: #b8b8b8;
-}
-
-.links .active {
-  color: #5f4dee;
-  border-color: #5f4dee;
-}
-
-#frame1-btn, #frame2-btn, #frame3-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  border-bottom: 2px solid;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0px 10px 5px 10px;
-  cursor: pointer;
-  display: inline;
-  font-size: 1.3em;
-}
-
-#frame1-btn:hover, #frame2-btn:hover, #frame3-btn:hover {
-  color: #5f4dee;
-  border-color: #5f4dee;
-}
-
-#frame1-btn p, #frame2-btn p, #frame3-btn p {
-  display: inline;
-  font-weight: 600;
-  margin-left: 5px;
-}
-
-.button-active {
-  color: #5f4dee;
-}
-
-#frame2 {
-  display: none;
-}
-
-#frame3 {
-  display: none;
 }
 
 .flex {
@@ -825,12 +824,15 @@ section div.marketing-ctn p {
           justify-content: space-between;
   margin: 0px auto;
   padding: 0px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .flex ul {
   padding: 0px;
   list-style-position: inside;
   list-style-type: square;
+  margin-bottom: 30px;
 }
 
 .flex ul li {
@@ -855,7 +857,6 @@ section div.marketing-ctn p {
 
 .flex .text-float {
   margin: 0px;
-  max-width: 500px;
 }
 
 .flex .text-float .form-submit {
@@ -868,12 +869,13 @@ section div.marketing-ctn p {
   padding: 12px 35px;
   background-color: #5f4dee;
   border-radius: 25px;
-  margin: 10px 0px;
-  position: relative;
-  top: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: #f0ffff;
   border: 1px solid #5f4dee;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .flex .login-btn:hover {
@@ -890,21 +892,17 @@ section div.marketing-ctn p {
   border-color: #b8b8b8;
 }
 
-.flex span {
-  max-width: 500px;
-}
-
 .features-img {
   margin: 45px 0px 0px 0px;
 }
 
 .features-frame {
-  margin: 30px 0px;
+  margin: 10px 0px 30px 0px;
 }
 
 .flex > .price {
   border: 2px solid #5c2be23d;
-  padding: 50px 30px 90px 30px;
+  padding: 50px 30px;
   max-width: 250px;
   border-radius: 6px;
   text-align: center;
@@ -922,9 +920,10 @@ section div.marketing-ctn p {
   list-style: none;
   padding: 0px 5px;
   text-indent: 0px;
+  margin-bottom: 35px;
 }
 
-.flex > .price .cost {
+.flex > .price .div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -939,15 +938,20 @@ section div.marketing-ctn p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 0px;
+}
+
+.flex > .price .cost {
   font-size: 2.7em;
   font-weight: 700;
-  margin-bottom: 0px;
+  display: inline;
 }
 
 .flex > .price .value {
   font-size: 25px;
   margin-right: 5px;
   font-weight: 400;
+  display: inline;
 }
 
 .flex > .price p {
@@ -1005,7 +1009,7 @@ section div.marketing-ctn p {
       -ms-flex-align: center;
           align-items: center;
   align-items: center;
-  padding: 0px 50px;
+  padding: 0px 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1060,19 +1064,21 @@ section div.marketing-ctn p {
 
 .email-box h2 {
   text-align: center;
-  margin: 0px auto 40px auto;
+  margin: 10px auto 30px auto;
   font-size: 2.0em;
 }
 
 .email-box input {
   border: 1px solid #b8b8b8;
-  height: 30px;
-  padding: 5px;
+  height: 40px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .email-box .check {
   height: 15px;
-  margin-right: 3px;
+  margin-right: 10px;
 }
 
 .email-box label {
@@ -1086,12 +1092,11 @@ section div.marketing-ctn p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin: 15px 0px 15px 0px;
-  font-size: 13px;
+  align-items: center;
+  margin: 10px 0px 15px 0px;
+  font-size: 10px;
   color: #6b747b;
+  text-align: start;
 }
 
 input.txt {
@@ -1119,6 +1124,33 @@ form .login-btn:hover {
           transition-duration: 0.5s;
 }
 
+#content-icons {
+  margin: 30px auto;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+#content-icons a {
+  padding: 0px;
+}
+
+#content-icons .fab {
+  width: 23px;
+  border-radius: 50%;
+  padding: 12px;
+  background-color: #5f4dee;
+  color: white;
+  font-size: 2em;
+  margin: 0px 5px;
+}
+
+#content-icons .fab:hover {
+  color: #5f4dee;
+  background-color: #f4f9ff;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
 @media (min-width: 930px) {
   section div {
     max-width: 970px;
@@ -1141,7 +1173,7 @@ form .login-btn:hover {
   section div.marketing-ctn p {
     width: 300px;
   }
-  nav.links {
+  .links {
     margin-bottom: 35px;
   }
   .features-frame {
@@ -1162,10 +1194,14 @@ form .login-btn:hover {
             align-items: flex-start;
   }
   .flex .span {
+    max-width: 500px;
     margin-bottom: 40px;
+    margin-right: 20px;
   }
   .flex .text-float {
+    max-width: 500px;
     float: right;
+    margin-left: 20px;
   }
   .flex .price {
     margin-bottom: 0px;
@@ -1206,33 +1242,6 @@ form .login-btn:hover {
   }
 }
 
-#content-icons {
-  margin: 30px auto;
-  text-align: center;
-  font-size: 0.8em;
-}
-
-#content-icons a {
-  padding: 0px;
-}
-
-#content-icons .fab {
-  width: 23px;
-  border-radius: 50%;
-  padding: 12px;
-  background-color: #5f4dee;
-  color: white;
-  font-size: 2em;
-  margin: 0px 5px;
-}
-
-#content-icons .fab:hover {
-  color: #5f4dee;
-  background-color: #f4f9ff;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-}
-
 @media (max-width: 930px) {
   section div {
     max-width: 700px;
@@ -1240,12 +1249,18 @@ form .login-btn:hover {
 }
 
 @media (max-width: 480px) {
+  .marketing-ctn p {
+    font-size: 14px;
+  }
   .automation-container {
     padding: 0px 20px;
   }
   .flex {
     padding: 0px 20px;
     margin: 0px;
+  }
+  .flex h3 {
+    font-size: 1.4em;
   }
   aside .login-btn {
     padding: 15px 26%;
@@ -1260,25 +1275,19 @@ form .login-btn:hover {
     width: 100px;
     margin: 0px;
   }
-  .play-button {
-    top: 30%;
-  }
-  #frame-btn1, #frame-btn2, #frame-btn3 {
-    margin-top: 45px;
-  }
-  #frame1-btn, #frame2-btn, #frame3-btn {
-    margin-bottom: 10px;
-  }
   .links {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-size: 14px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .links span {
+    display: block;
     margin-bottom: 30px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
     margin-bottom: 10px;
+  }
+  blockquote {
+    font-size: 14px;
   }
 }
 
@@ -1526,10 +1535,10 @@ footer div {
   color: #f0ffff;
   background-color: #5f4dee;
   border-radius: 25px;
-  cursor: pointer;
   height: 50px;
   width: 200px;
   margin: auto;
+  cursor: pointer;
 }
 
 .modalRegister .submit:hover {
@@ -1563,10 +1572,6 @@ footer div {
   max-width: 1150px;
   padding: 15px;
   position: relative;
-  /*animation-name: lightbox;
-        animation-duration: 1s;
-        animation-timing-function: ease;
-        animation-iteration-count: infinite;*/
 }
 
 #lightbox .lightbox-container {

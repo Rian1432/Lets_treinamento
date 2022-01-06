@@ -1,0 +1,18 @@
+@mixin flex ($direction){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+}
+/*mixin para criação de botões*/
+@mixin button ($padding,$bgcolor,$color){
+    padding: $padding;
+    border: 1px solid $secundary_color;
+    border-radius: 25px;
+
+    &:hover{
+        background-color: $bgcolor;
+        color: $color;
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
+    }
+}

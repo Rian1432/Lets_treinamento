@@ -2,25 +2,7 @@
 
 @import '_variables.scss';
 @import '_keyframes.scss';
-
-@mixin flex ($direction){
-    display: flex;
-    flex-direction: $direction;
-    align-items: center;
-}
-/*mixin para criação de botões*/
-@mixin button ($padding,$bgcolor,$color){
-    padding: $padding;
-    border: 1px solid $secundary_color;
-    border-radius: 25px;
-
-    &:hover{
-        background-color: $bgcolor;
-        color: $color;
-        transition-property: background-color, color;
-        transition-duration: 0.5s;
-    }
-}
+@import '_mixins.scss';
 
 *{
     margin: 0px;
@@ -72,7 +54,7 @@ svg.header-decoration{
     max-width: 585px;
     overflow-y: auto;
     overflow-x: scroll;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 .carousel {
     @include flex(row);
@@ -130,11 +112,10 @@ svg.header-decoration{
     }
     >a::after{
         content: '';
-
-        position: absolute;
-        width: 0;
-        top: 47%;
-        margin-left: 2px;
+        
+        position: relative;
+        top: 12px;
+        left: 2px;
         border-top: 5px solid white;
         border-bottom: 3px solid transparent;
         border-left: 3px solid transparent;
@@ -193,6 +174,8 @@ div.header-container > div{
     @include flex(row);
     align-items: flex-start;
     justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
 
     a.container-btn{
         @include button(12px 23px, $primary_color, $secundary_color);
@@ -307,17 +290,20 @@ div.header-container > div{
             margin-left: 15px; 
         }
     }
-    .dropbox a::after{
-        top: 23.8%;
-    }
     .header-container{
         max-width: 700px;
         margin: auto;
     }
 }
 @media (max-width:480px){
+    p{
+        font-size: $paragraph-sm;
+    }
+    li{
+        font-size: $paragraph-sm;
+    }
     header{
-        padding: 15px 10px;
+        padding: 10px;
     }
     div.header-container > div{
         margin: 0px 1% 40px 1%;
@@ -400,7 +386,6 @@ section{
         p{
             max-width: 600px;
             color: $paragraph-color;
-            font-size: 1em;
         }
     }
 }   
@@ -408,17 +393,57 @@ section{
     background-color: $lightgray;
     padding: 80px 0px;
 
-    nav{
-        margin: 40px 0px 0px 0px;
-        display: block;
-        text-align: center;
+    .links{
+        @include flex(row);
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
 
-        a{
-            color: #b8b8b8;   
-            padding-bottom: 5px;
-            border-bottom: 2px solid #b8b8b8;
-            margin: -2px; 
+        color: $paragraph-color;
+        border-color: #b8b8b8;
+        margin: 40px 0px 20px 0px;
+        overflow-x: hidden;
+
+        .active{
+            color: $primary_color;
+            border-color: $primary_color; 
         }
+        p{
+            display: inline;
+            font-size: 1em;
+        }
+    }
+    #frame1-btn, #frame2-btn, #frame3-btn{
+        @include flex(row);
+        align-items: center;
+        border-bottom: 2px solid;
+        box-sizing: border-box;
+        padding: 0px 10px 5px 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: inline;
+        font-size: 1.3em;
+    
+        &:hover{
+            color: $primary_color;
+            border-color: $primary_color;
+        }
+    
+        p{
+            display: inline;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+    }   
+    .button-active{
+        color: $primary_color;
+    }
+    #frame2{
+        display: none;
+    }
+    #frame3{
+        display: none;
+    }
     }
     .container-video{
         padding: 0px 20px;
@@ -436,7 +461,7 @@ section{
     }
     .play-button{
         position: absolute;
-        left: 50%;
+        left: 48%;
         top: 43%;
         display: block;
         width: 40px;
@@ -447,8 +472,8 @@ section{
             content: "";
             position: absolute;
             display: block;
-            top: 40%;
-            right: 50%;
+            top: -43%;
+            right: -4%;
             border-radius: 50%;
             width: 70px;
             height: 70px;
@@ -459,8 +484,8 @@ section{
             position: absolute;
             display: block;
             z-index: 3;
-            right: 50%;
-            top: 40%;
+            top: -43%;
+            right: -4%;
             border-radius: 50%;
             width: 70px;
             height: 70px;
@@ -477,8 +502,6 @@ section{
             display: block;
             z-index: 10;
             width: 0;
-            right: 22px;
-            top: 34px;
             background-color: transparent;
             border-left: 20px solid #fff;
             border-top: 16px solid transparent;
@@ -491,58 +514,19 @@ section{
         max-width: 650px;
         text-align: center;
     }
-}
-.links{
-    @include flex(column);
-    margin-bottom: 0px;
-    color: $paragraph-color;
-    border-color: #b8b8b8;
-
-    .active{
-        color: $primary_color;
-        border-color: $primary_color; 
-    }
-}
-#frame1-btn, #frame2-btn, #frame3-btn{
-    @include flex(row);
-    align-items: flex-start;
-    border-bottom: 2px solid;
-    box-sizing: border-box;
-    padding: 0px 10px 5px 10px;
-    cursor: pointer;
-    display: inline;
-    font-size: 1.3em;
-
-    &:hover{
-        color: $primary_color;
-        border-color: $primary_color;
-    }
-
-    p{
-        display: inline;
-        font-weight: 600;
-        margin-left: 5px;
-    }
-}   
-.button-active{
-    color: $primary_color;
-}
-#frame2{
-    display: none;
-}
-#frame3{
-    display: none;
-}
+    
 .flex{
     @include flex(column);
     justify-content: space-between;
     margin: 0px auto;
     padding: 0px 20px;
+    box-sizing: border-box;
 
     ul{
         padding: 0px;
         list-style-position: inside;
         list-style-type: square;
+        margin-bottom: 30px;
 
         li{
             margin-bottom: 10px;
@@ -563,7 +547,6 @@ section{
     }
     .text-float{
         margin: 0px;
-        max-width: 500px;
         
         .form-submit{
             text-decoration: underline;
@@ -575,12 +558,12 @@ section{
         padding: 12px 35px;
         background-color: $primary_color;
         border-radius: 25px;
-        margin: 10px 0px;
-        position: relative;
-        top: 20px;
+        box-sizing: border-box;
         color: $secundary_color;
         border: 1px solid $primary_color;
         cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
 
         &:hover{
             background-color: $secundary_color;
@@ -593,19 +576,16 @@ section{
     hr{
         border-color: #b8b8b8;
     }
-    span{
-        max-width: 500px;
-    }
 }
 .features-img{
     margin: 45px 0px 0px 0px;
 }
 .features-frame{
-    margin: 30px 0px;
+    margin: 10px 0px 30px 0px;
 }
 .flex > .price{
     border: 2px solid #5c2be23d;
-    padding: 50px 30px 90px 30px;
+    padding: 50px 30px;
     max-width: 250px;
     border-radius: 6px;
     text-align: center;
@@ -621,19 +601,24 @@ section{
         list-style: none;
         padding: 0px 5px;
         text-indent: 0px;
+        margin-bottom: 35px;
     }
-    .cost{
+    .div{
         @include flex(row);
         align-items: center;
         justify-content: center;
+        margin-bottom: 0px;
+    }
+    .cost{
         font-size: 2.7em;
         font-weight: 700;
-        margin-bottom: 0px;
+        display: inline;
     }
     .value{
         font-size: 25px;
         margin-right: 5px;
         font-weight: 400;
+        display: inline;
     }
     p{
         margin-top: 0px;
@@ -673,7 +658,7 @@ section{
     .swiper-slide{
         @include flex(column);
         align-items: center;
-        padding: 0px 50px;
+        padding: 0px 40px;
         box-sizing: border-box;
 
         span{
@@ -713,24 +698,26 @@ section{
     }
     h2{
         text-align: center;
-        margin: 0px auto 40px auto;
+        margin: 10px auto 30px auto;
         font-size: 2.0em;
     }
     input{
         border: 1px solid #b8b8b8;
-        height: 30px;
-        padding: 5px;
+        height: 40px;
+        padding: 10px;
+        box-sizing: border-box;
     }
     .check{
         height: 15px;
-        margin-right: 3px;
+        margin-right: 10px;
     }
     label{
         @include flex(row);
-        align-items: flex-start;
-        margin: 15px 0px 15px 0px;
-        font-size: 13px;
+        align-items: center;
+        margin: 10px 0px 15px 0px;
+        font-size: 10px;
         color: #6b747b;
+        text-align: start;
     }
 }
 input.txt{
@@ -754,6 +741,32 @@ form .login-btn{
         transition-duration: 0.5s;
     }
 }
+#content-icons{
+    margin: 30px auto;
+    text-align: center;
+    font-size: 0.8em;
+
+    a{
+        padding: 0px;
+    }
+
+    .fab{
+        width: 23px;
+        border-radius: 50%;
+        padding: 12px;
+        background-color: $primary_color;
+        color: white;
+        font-size: 2em;
+        margin: 0px 5px;
+
+
+        &:hover{
+            color: $primary_color;
+            background-color: $lightgray;
+            transition-duration: 0.5s;
+        }
+    }
+}
 @media (min-width:930px){
     section{
         div{
@@ -774,7 +787,7 @@ form .login-btn{
             width: 300px;
         }
     }
-    nav.links{
+    .links{
         margin-bottom: 35px;
     }
 
@@ -792,10 +805,14 @@ form .login-btn{
         align-items: flex-start;
     
         .span{
+            max-width: 500px;
             margin-bottom: 40px;
+            margin-right: 20px;
         }
         .text-float{
+            max-width: 500px;
             float: right;
+            margin-left: 20px;
         }
         .price{
             margin-bottom: 0px;
@@ -838,32 +855,6 @@ form .login-btn{
         max-width: 600px;
     }
 }
-#content-icons{
-    margin: 30px auto;
-    text-align: center;
-    font-size: 0.8em;
-
-    a{
-        padding: 0px;
-    }
-
-    .fab{
-        width: 23px;
-        border-radius: 50%;
-        padding: 12px;
-        background-color: $primary_color;
-        color: white;
-        font-size: 2em;
-        margin: 0px 5px;
-
-
-        &:hover{
-            color: $primary_color;
-            background-color: $lightgray;
-            transition-duration: 0.5s;
-        }
-    }
-}
 @media (max-width:930px) {
     section{
         div{
@@ -872,12 +863,22 @@ form .login-btn{
     }
 }
 @media (max-width:480px){
+    .marketing-ctn{
+        p{
+            font-size: $paragraph-sm;
+        }
+    }
     .automation-container{
         padding: 0px 20px;
     }
     .flex{
         padding: 0px 20px;
         margin: 0px;
+
+        h3{
+            font-size: 1.4em;
+            
+        }
     }
     aside .login-btn{
         padding: 15px 26%;
@@ -893,24 +894,17 @@ form .login-btn{
         width: 100px;
         margin: 0px;
     }
-    .play-button{
-        top: 30%;
-    }
-    #frame-btn1, #frame-btn2, #frame-btn3{
-        margin-top: 45px;
-    }
-    #frame1-btn, #frame2-btn, #frame3-btn{
-        margin-bottom: 10px;
-    }
     .links{
-        box-sizing: border-box;
-        font-size: 14px;
+        flex-direction: column;
 
         span{
+            display: block;
             margin-bottom: 30px;
-            box-sizing: border-box;
             margin-bottom: 10px;
         }
+    }
+    blockquote{
+        font-size: $paragraph-sm;
     }
 }
 @media (min-width:1200px) {
@@ -1092,10 +1086,10 @@ footer div{
         color: $secundary_color;
         background-color: $primary_color;
         border-radius: 25px;
-        cursor: pointer;
         height: 50px;
         width: 200px;
         margin: auto;
+        cursor: pointer;
     }
 }
 
@@ -1124,10 +1118,6 @@ footer div{
         max-width: 1150px;
         padding: 15px;
         position: relative;
-        /*animation-name: lightbox;
-        animation-duration: 1s;
-        animation-timing-function: ease;
-        animation-iteration-count: infinite;*/
     }
     .lightbox-container{
         @include flex(column);
