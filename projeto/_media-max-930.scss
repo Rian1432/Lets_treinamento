@@ -1,0 +1,75 @@
+/********** media do começo do site ********/
+@media (max-width:930px){
+    
+    .menu{
+        @include flex(column);
+        align-items: flex-start;
+        background-color: $primary_color;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        right: -100%;
+        top: 0;
+        padding-top: 65px; 
+
+        a{
+            margin: 0px 0px 5px 15px;
+        }
+    }
+    .burguer{
+        display: block;
+        cursor: pointer;
+        z-index: 999;
+
+        img{
+            width: 30px;
+        }
+    }
+   
+    #check:checked ~ .menu{
+        right: 0;
+        transition-duration: 0.8s;
+    }
+    .dropbox{
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .dropbox-content{
+        margin-top: 10px;
+        position: relative;
+        z-index: 0;
+        
+        ul{
+            display: block;
+            width: 95vw;
+            list-style-type: none;
+            text-align: left;
+            padding: 10px 15px;
+            box-shadow: none;
+        }
+        #modal-btn{
+            margin-left: 15px; 
+        }
+    }
+    .header-container{
+        max-width: 700px;
+        margin: auto;
+    }
+
+
+/********** media do meio do site ********/
+    section{
+        div{
+            max-width: 700px;
+        }
+    }
+    #frame1-btn, #frame2-btn, #frame3-btn{
+        font-size: 1.3em;
+    } 
+
+/***** media dos modais ****/        
+    .modalplay{
+        height: 360px;
+    }
+}
+

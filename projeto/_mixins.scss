@@ -3,7 +3,7 @@
     flex-direction: $direction;
     align-items: center;
 }
-/*mixin para criação de botões*/
+/*mixin para botões*/
 @mixin button ($padding,$bgcolor,$color){
     padding: $padding;
     border: 1px solid $secundary_color;
